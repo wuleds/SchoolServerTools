@@ -13,8 +13,8 @@ public class RegisterService
     @Autowired
     private RegisterDao registerDao;
 
-    public boolean register(String userId,String userName,String userSex,String userPassword)
+    public boolean userRegister(String userId, String userName, String userSex, String userPassword)
     {
-        return registerDao.register(userId,userName,userSex,userPassword);
+        return registerDao.userRegister(userId,userName,userSex,userPassword);
     }
 }

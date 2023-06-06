@@ -25,7 +25,7 @@ public class RegisterCon
         String userPassword = user.getUserPassword();
         String userSex = user.getUserSex();
 
-        registerService.register(userId,userName,userSex,userPassword);
+        registerService.userRegister(userId,userName,userSex,userPassword);
 
         return "";
     }
