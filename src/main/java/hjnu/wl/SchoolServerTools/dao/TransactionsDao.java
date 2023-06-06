@@ -4,6 +4,8 @@ import hjnu.wl.SchoolServerTools.model.Transaction;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
+
 import java.util.ArrayList;
 
 /***
@@ -29,4 +31,10 @@ public interface TransactionsDao
      */
     @Select("select * from transaction where transactionId=#{transactionId}")
     Transaction getTransactionById(int transactionId);
+
+    /***
+     * 删除二手货售卖信息
+     */
+    @Update("update transaction set state='0' where transactionId=#{transactionId}")
+    boolean deleteTransaction(int transactionId);
 }

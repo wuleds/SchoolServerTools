@@ -5,6 +5,8 @@ import hjnu.wl.SchoolServerTools.model.SchoolEmploy;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
+
 import java.util.ArrayList;
 
 /***
@@ -30,4 +32,10 @@ public interface SchoolEmployDao
      */
     @Select("select * from schoolEmploy where schoolEmployId=#{schoolEmployId} and state='1'")
     SchoolEmploy getSchoolEmployById(int schoolEmployId);
+
+    /***
+     * 删除招聘信息
+     */
+    @Update("update schoolEmploy set state='0' where schoolEmployId=#{schoolEmployId}")
+    boolean deleteSchoolEmploy(int schoolEmployId);
 }

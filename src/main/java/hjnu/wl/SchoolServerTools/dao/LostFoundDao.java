@@ -5,10 +5,13 @@ import hjnu.wl.SchoolServerTools.model.LostFound;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
+
 import java.util.ArrayList;
 
 /***失物招领
- * @author wule***/
+ * @author wule
+ ***/
 @Mapper
 public interface LostFoundDao
 {
@@ -29,4 +32,10 @@ public interface LostFoundDao
      */
     @Select("select * from lostFound where lostFoundId=#{lostFoundId} and state='1'")
     LostFound getLostFoundById(int lostFoundId);
+
+    /***
+     * 删除失物招领信息
+     */
+    @Update("update lostFound set state='0' where lostFoundId=#{lostFoundId}")
+    boolean deleteLostFound(int lostFoundId);
 }

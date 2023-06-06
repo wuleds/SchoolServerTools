@@ -1,6 +1,6 @@
 package hjnu.wl.SchoolServerTools.service;
 
-import hjnu.wl.SchoolServerTools.dao.RegisterDao;
+import hjnu.wl.SchoolServerTools.dao.UserDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,10 +11,10 @@ import org.springframework.stereotype.Service;
 public class RegisterService
 {
     @Autowired
-    private RegisterDao registerDao;
+    private UserDao UserDao;
 
     public boolean userRegister(String userId, String userName, String userSex, String userPassword)
     {
-        return registerDao.userRegister(userId,userName,userSex,userPassword);
+        return UserDao.userRegister(userId,userName,userSex,userPassword,"1");
     }
 }

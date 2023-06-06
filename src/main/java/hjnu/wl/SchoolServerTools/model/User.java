@@ -9,15 +9,9 @@ public class User
     private String userName;
     private String userSex;
     private String userPassword;
+    private String state;
 
     public User() {
-    }
-
-    public User(String userId, String userName, String userSex, String userPassword) {
-        this.userId = userId;
-        this.userName = userName;
-        this.userSex = userSex;
-        this.userPassword = userPassword;
     }
 
     public String getUserId() {
@@ -50,5 +44,13 @@ public class User
 
     public void setUserPassword(String userPassword) {
         this.userPassword = userPassword;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
     }
 }
