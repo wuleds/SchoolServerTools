@@ -1,6 +1,7 @@
 package hjnu.wl.SchoolServerTools.controller;
 
 import hjnu.wl.SchoolServerTools.model.User;
+import hjnu.wl.SchoolServerTools.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -14,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class RegisterCon
 {
     @Autowired
-    private RegisterService registerService;
+    private UserService userService;
 
     @PostMapping("/user")
     public String register(User user)
@@ -24,8 +25,8 @@ public class RegisterCon
         String userPassword = user.getUserPassword();
         String userSex = user.getUserSex();
 
-        registerService.userRegister(userId,userName,userSex,userPassword);
-
-        return "";
+        if(userService.userRegister(userId,userName,userSex,userPassword))
+            return "ok";
+        return "no";
     }
 }

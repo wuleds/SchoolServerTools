@@ -11,5 +11,19 @@ public class UserService
     @Autowired
     private UserDao userDao;
 
+    public boolean userRegister(String userId,String userName,String userSex,String userPassword)
+    {
+        boolean a = false;
+        //判断用户是否存在
+        if(userDao.isUserExist(userId) != null)
+        {
+            //如果用户存在，继续判断该用户是否允许登录
+            if(userDao.userSignin(userId,userPassword) != null)
+            {
+                a = true;
+            }
+        }
 
+        return a;
+    }
 }
