@@ -2,17 +2,17 @@ package hjnu.wl.SchoolServerTools.model;
 
 /**
  * @author wule
+ * 用户信息
  */
 public class User
 {
-    private String userId;
-    private String userName;
-    private String userSex;
-    private String userPassword;
-    private String state;
+    private String userId;          //用户id
+    private String userName;        //用户姓名
+    private String userSex;         //用户性别
+    private String userPassword;    //用户密码
+    private String state;           //状态
 
-    public User() {
-    }
+    public User() {}
 
     public String getUserId() {
         return userId;

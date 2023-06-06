@@ -6,12 +6,12 @@ import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
-
 import java.util.ArrayList;
 
-/***失物招领
+/***
+ * 失物招领
  * @author wule
- ***/
+ */
 @Mapper
 public interface LostFoundDao
 {

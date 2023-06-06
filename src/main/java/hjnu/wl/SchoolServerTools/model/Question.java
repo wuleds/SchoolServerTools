@@ -1,7 +1,8 @@
 package hjnu.wl.SchoolServerTools.model;
 //汉江师范学院 数计学院 吴乐创建于2023/6/7 0:06
 
-/***
+/**
+ * @author wule
  * 疑难解答
  */
 public class Question

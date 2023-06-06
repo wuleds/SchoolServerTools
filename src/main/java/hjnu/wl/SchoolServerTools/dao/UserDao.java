@@ -5,6 +5,10 @@ import hjnu.wl.SchoolServerTools.model.Controller;
 import hjnu.wl.SchoolServerTools.model.User;
 import org.apache.ibatis.annotations.*;
 
+/***
+ * @author wule
+ * 用户登录注册
+ */
 @Mapper
 public interface UserDao
 {
