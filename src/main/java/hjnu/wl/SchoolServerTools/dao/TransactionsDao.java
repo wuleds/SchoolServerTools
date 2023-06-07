@@ -16,24 +16,28 @@ public interface TransactionsDao
 {
     /***
      * 发布二手货
+     * 测试通过
      */
     @Insert("insert into transaction(sellerId,phoneNumber,goodsName,goodsPrice,goodsDescribe,goodsImage,releaseTime,state) values(#{sellerId},#{phoneNumber},#{goodsName},#{goodsPrice},#{goodsDescribe},#{goodsImage},#{releaseTime},#{state})")
     boolean releaseTransaction(String sellerId,String phoneNumber,String goodsName,String goodsPrice,String goodsDescribe,String goodsImage,String releaseTime,String state);
 
     /***
      * 查询所有二手货信息
+     * 测试通过
      */
     @Select("select * from transaction where state='1' order by releaseTime")
     ArrayList<Transaction> getAllTransactions();
 
     /***
      * 根据id查询二手货信息
+     * 测试通过
      */
-    @Select("select * from transaction where transactionId=#{transactionId}")
+    @Select("select * from transaction where transactionId=#{transactionId} and state='1'")
     Transaction getTransactionById(int transactionId);
 
     /***
      * 删除二手货售卖信息
+     * 测试通过
      */
     @Update("update transaction set state='0' where transactionId=#{transactionId}")
     boolean deleteTransaction(int transactionId);

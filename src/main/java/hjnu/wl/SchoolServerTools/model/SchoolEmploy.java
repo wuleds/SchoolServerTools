@@ -117,4 +117,22 @@ public class SchoolEmploy
     public void setState(String state) {
         this.state = state;
     }
+
+    @Override
+    public String toString() {
+        return "SchoolEmploy{" +
+                "schoolEmployId='" + schoolEmployId + '\'' +
+                ", hrName='" + hrName + '\'' +
+                ", hrPhoneNumber='" + hrPhoneNumber + '\'' +
+                ", image='" + image + '\'' +
+                ", companyName='" + companyName + '\'' +
+                ", jobName='" + jobName + '\'' +
+                ", salary='" + salary + '\'' +
+                ", jobPower='" + jobPower + '\'' +
+                ", jobContent='" + jobContent + '\'' +
+                ", jobNotices='" + jobNotices + '\'' +
+                ", releaseTime='" + releaseTime + '\'' +
+                ", state='" + state + '\'' +
+                '}';
+    }
 }

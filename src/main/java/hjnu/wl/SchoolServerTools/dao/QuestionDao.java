@@ -18,8 +18,8 @@ public interface QuestionDao
     /***
      * 发布问题
      */
-    @Insert("insert into question(quizzerId,question,releaseTime,state) values(#{quizzerId},#{question},#{releaseTime},#{state})")
-    boolean releaseQuestion(String quizzerId,String question,String releaseTime,String state);
+    @Insert("insert into question(quizzerId,question,notices,releaseTime,state) values(#{quizzerId},#{question},#{notices},#{releaseTime},#{state})")
+    boolean releaseQuestion(String quizzerId,String question,String notices,String releaseTime,String state);
 
     /***
      * 回答问题
@@ -28,22 +28,16 @@ public interface QuestionDao
     boolean answerQuestion(int questionId,String answererId,String answer,String answerTime);
 
     /***
+     * 根据id查询问题
+     */
+    @Select("select * from question where questionId=#{questionId} and state='1'")
+    Question getQuestionById(int questionId);
+
+    /***
      * 查询所有问题
      */
     @Select("select * from question where state='1'")
     ArrayList<Question> getAllQuestions();
-
-    /***
-     * 查询所有未回答的问题
-     */
-    @Select("select * from question where answererId is null and answer is null and state='1'")
-    ArrayList<Question> getAllUnansweredQuestions();
-
-    /***
-     * 查询所有已回答的问题
-     */
-    @Select("select * from question where answererId is not null and answer is not null and state='1'")
-    ArrayList<Question> getAllAnsweredQuestions();
 
     /***
      * 删除问题

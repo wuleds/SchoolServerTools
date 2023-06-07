@@ -10,7 +10,7 @@ public class Controller
     private String controllerName;          //管理员姓名
     private String controllerSex;           //管理员性别
     private String controllerPassword;      //管理员密码
-    private String controllerPhoneNumber;   //管理员电话
+    private String phoneNumber;             //管理员电话
     private String appointment;             //管理员职位
     private String state;                   //状态
 
@@ -48,12 +48,12 @@ public class Controller
         this.controllerPassword = controllerPassword;
     }
 
-    public String getControllerPhoneNumber() {
-        return controllerPhoneNumber;
+    public String getPhoneNumber() {
+        return phoneNumber;
     }
 
-    public void setControllerPhoneNumber(String controllerPhoneNumber) {
-        this.controllerPhoneNumber = controllerPhoneNumber;
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 
     public String getAppointment() {
@@ -70,5 +70,18 @@ public class Controller
 
     public void setState(String state) {
         this.state = state;
+    }
+
+    @Override
+    public String toString() {
+        return "Controller{" +
+                "controllerId='" + controllerId + '\'' +
+                ", controllerName='" + controllerName + '\'' +
+                ", controllerSex='" + controllerSex + '\'' +
+                ", controllerPassword='" + controllerPassword + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", appointment='" + appointment + '\'' +
+                ", state='" + state + '\'' +
+                '}';
     }
 }

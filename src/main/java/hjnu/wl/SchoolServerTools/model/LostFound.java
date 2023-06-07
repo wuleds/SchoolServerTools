@@ -81,4 +81,18 @@ public class LostFound
     public void setState(String state) {
         this.state = state;
     }
+
+    @Override
+    public String toString() {
+        return "LostFound{" +
+                "lostFoundId='" + lostFoundId + '\'' +
+                ", userId='" + userId + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", thingName='" + thingName + '\'' +
+                ", thingImage='" + thingImage + '\'' +
+                ", thingDescribe='" + thingDescribe + '\'' +
+                ", releaseTime='" + releaseTime + '\'' +
+                ", state='" + state + '\'' +
+                '}';
+    }
 }

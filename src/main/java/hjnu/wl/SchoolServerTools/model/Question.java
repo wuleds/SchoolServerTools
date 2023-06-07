@@ -9,6 +9,7 @@ public class Question
 {
     private String questionId;  //问题id
     private String question;    //问题
+    private String notices;     //描述
     private String answer;      //答案
     private String quizzerId;   //提问者id
     private String answererId;  //回答者id
@@ -80,5 +81,28 @@ public class Question
 
     public void setState(String state) {
         this.state = state;
+    }
+
+    public String getNotices() {
+        return notices;
+    }
+
+    public void setNotices(String notices) {
+        this.notices = notices;
+    }
+
+    @Override
+    public String toString() {
+        return "Question{" +
+                "questionId='" + questionId + '\'' +
+                ", question='" + question + '\'' +
+                ", notices='" + notices + '\'' +
+                ", answer='" + answer + '\'' +
+                ", quizzerId='" + quizzerId + '\'' +
+                ", answererId='" + answererId + '\'' +
+                ", releaseTime='" + releaseTime + '\'' +
+                ", answerTime='" + answerTime + '\'' +
+                ", state='" + state + '\'' +
+                '}';
     }
 }

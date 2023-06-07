@@ -23,6 +23,7 @@ mvnw
 mvnw.cmd
 target
 .mvn
+test/
 ### NetBeans ###
 /nbproject/private/
 /nbbuild/
@@ -35,3 +36,4 @@ build/
 
 ### VS Code ###
 .vscode/
+/src/test/

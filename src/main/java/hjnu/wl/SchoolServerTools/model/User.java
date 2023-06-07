@@ -53,4 +53,15 @@ public class User
     public void setState(String state) {
         this.state = state;
     }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "userId='" + userId + '\'' +
+                ", userName='" + userName + '\'' +
+                ", userSex='" + userSex + '\'' +
+                ", userPassword='" + userPassword + '\'' +
+                ", state='" + state + '\'' +
+                '}';
+    }
 }

@@ -12,9 +12,11 @@ import org.apache.ibatis.annotations.*;
 @Mapper
 public interface UserDao
 {
+    /***普通用户注册***/
     @Insert("insert into user (userId,userName,userSex,userPassword,state) value(#{userId},#{userName},#{userSex},#{userPassword},#{state})")
     boolean userRegister(String userId,String userName,String userSex,String userPassword,String state);
 
+    /***管理员注册***/
     @Insert("insert into controller (controllerId,controllerName,controllerPassword,controllerSex,phoneNumber,appointment,state) value(#{controllerId},#{controllerName},#{controllerPassword},#{controllerSex},#{phoneNumber},#{appointment},#{state})")
     boolean controllerRegister(String controllerId,String controllerName,String controllerPassword,String controllerSex,String phoneNumber,String appointment,String state);
 
@@ -36,13 +38,17 @@ public interface UserDao
 
     /***禁止该用户登录***/
     @Update("update user set state='0' where userId=#{userId}")
-    boolean deleteUser(String userId);
+    boolean banUser(String userId);
 
     /***禁止该管理员登录***/
     @Update("update controller set state='0' where controllerId=#{controllerId}")
-    boolean deleteController(String controllerId);
+    boolean banController(String controllerId);
 
     /***修改用户信息***/
     @Update("update user set userName=#{userName},userSex=#{userSex},userPassword=#{userPassword} where userId=#{userId} and state='1'")
     User updateUserData(String userId,String userName,String userSex,String userPassword);
+
+    /***修改管理员信息***/
+    @Update("update controller set controllerName=#{controllerName},controllerSex=#{controllerSex},controllerPassword=#{controllerPassword},phoneNumber=#{phoneNumber},appointment=#{appointment} where controllerId=#{controllerId} and state='1'")
+    Controller updateControllerData(String controllerId,String controllerName,String controllerSex,String controllerPassword,String phoneNumber,String appointment);
 }

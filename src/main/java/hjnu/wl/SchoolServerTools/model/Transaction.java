@@ -3,7 +3,7 @@ package hjnu.wl.SchoolServerTools.model;
 
 /**
  * @author wule
- * 发布二手货
+ * 二手货
  */
 public class Transaction
 {
@@ -89,5 +89,20 @@ public class Transaction
 
     public void setState(String state) {
         this.state = state;
+    }
+
+    @Override
+    public String toString() {
+        return "Transaction{" +
+                "transactionId='" + transactionId + '\'' +
+                ", sellerId='" + sellerId + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", goodsName='" + goodsName + '\'' +
+                ", goodsPrice='" + goodsPrice + '\'' +
+                ", goodsDescribe='" + goodsDescribe + '\'' +
+                ", goodsImage='" + goodsImage + '\'' +
+                ", releaseTime='" + releaseTime + '\'' +
+                ", state='" + state + '\'' +
+                '}';
     }
 }
