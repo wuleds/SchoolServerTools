@@ -20,7 +20,7 @@ public class SchoolEmployService
     }
 
     /**发布学校招聘信息*/
-    public String releaseSchoolEmploy(String hrName,String hrPhoneNumber,String image,String companyName,String jobName,String salary,String jobPower,String jobContent,String jobNotices)
+    public String releaseSchoolEmploy(String hrName,String hrPhoneNumber,String imageMd5,String companyName,String jobName,String salary,String jobPower,String jobContent,String jobNotices)
     {
         try{
             if (hrName.length() < 2 || hrName.length() > 10)
@@ -43,9 +43,6 @@ public class SchoolEmployService
             e.printStackTrace();
             return "NullPointException";
         }
-        String imageMd5 = "null";
-        if(image != null)
-            imageMd5 = Md5Util.getMd5(image);
 
         if(schoolEmployDao.releaseSchoolEmploy(hrName,hrPhoneNumber,imageMd5,companyName,jobName,salary,jobPower,jobContent,jobNotices,GetNowTime.getNowTime(),"1"))
             return "releaseSuccess";

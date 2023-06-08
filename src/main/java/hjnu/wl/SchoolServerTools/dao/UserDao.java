@@ -51,4 +51,8 @@ public interface UserDao
     /***修改管理员信息***/
     @Update("update controller set controllerName=#{controllerName},controllerSex=#{controllerSex},controllerPassword=#{controllerPassword},phoneNumber=#{phoneNumber},appointment=#{appointment} where controllerId=#{controllerId} and state='1'")
     Controller updateControllerData(String controllerId,String controllerName,String controllerSex,String controllerPassword,String phoneNumber,String appointment);
+
+    /**设置头像**/
+    @Update("update profilePhoto set photo = #{photo} where id = #{id}")
+    boolean setProfilePhoto(String id,String photo);
 }

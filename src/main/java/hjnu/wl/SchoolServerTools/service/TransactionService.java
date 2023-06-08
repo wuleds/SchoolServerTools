@@ -23,7 +23,7 @@ public class TransactionService
 
     /**发布二手货信息
      * 测试通过*/
-    public String releaseTransaction(String sellerId,String phoneNumber,String goodsName,String goodsImage,String goodsPrice,String goodsDescribe)
+    public String releaseTransaction(String sellerId,String phoneNumber,String goodsName,String goodsImageMd5,String goodsPrice,String goodsDescribe)
     {
         try{
             if(phoneNumber.length() != 11)
@@ -39,11 +39,7 @@ public class TransactionService
             return "NullPointerException";
         }
 
-        String imageMd5 = "null";
-        if(goodsImage != null)
-            imageMd5 = Md5Util.getMd5(goodsImage);
-
-        if(transactionsDao.releaseTransaction(sellerId,phoneNumber,goodsName,goodsPrice,goodsDescribe,imageMd5, GetNowTime.getNowTime(),"1"))
+        if(transactionsDao.releaseTransaction(sellerId,phoneNumber,goodsName,goodsPrice,goodsDescribe,goodsImageMd5, GetNowTime.getNowTime(),"1"))
             return "ReleaseTransactionSuccess";
         return "ReleaseTransactionFail";
     }

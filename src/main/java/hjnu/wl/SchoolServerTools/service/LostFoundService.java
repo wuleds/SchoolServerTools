@@ -20,7 +20,7 @@ public class LostFoundService
     }
 
     /**发布失物招领**/
-    public String releaseLostFound(String userId,String phoneNumber,String thingName,String thingImage,String thingDescribe)
+    public String releaseLostFound(String userId,String phoneNumber,String thingName,String thingImageMd5,String thingDescribe)
     {
         try {
             if (phoneNumber.length() != 11)
@@ -33,13 +33,8 @@ public class LostFoundService
             e.printStackTrace();
             return "NullPointerException";
         }
-        if (thingImage == null)
-            thingImage = "null";
-        else {
-            Md5Util.getMd5(thingImage);
-        }
 
-        if(lostFoundDao.releaseLostFound(userId,phoneNumber,thingName,thingImage,thingDescribe, GetNowTime.getNowTime(),"1"))
+        if(lostFoundDao.releaseLostFound(userId,phoneNumber,thingName,thingImageMd5,thingDescribe, GetNowTime.getNowTime(),"1"))
             return "ReleaseSuccess";
         return "ReleaseFail";
     }

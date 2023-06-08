@@ -19,7 +19,7 @@ public class DataShareService
 
     /**发布信息
      * 测试通过**/
-    public String shareData(String sharerId,String title,String content,String image,String shareTime)
+    public String shareData(String sharerId,String title,String content,String imageMd5,String shareTime)
     {
         try{
             if(title.length() < 1 || title.length() > 10)
@@ -30,9 +30,7 @@ public class DataShareService
             e.printStackTrace();
             return "NullPointerException";
         }
-        String imageMd5 = "null";
-        if(image != null)
-            imageMd5 = Md5Util.getMd5(image);
+
         if(dataShareDao.shareData(sharerId,title,content,imageMd5,shareTime,"1"))
             return "DataShareSuccess";
 

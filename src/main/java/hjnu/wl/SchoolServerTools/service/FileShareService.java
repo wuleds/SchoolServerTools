@@ -25,7 +25,7 @@ public class FileShareService
      * 发布资源
      * 测试通过
      */
-    public String uploadFile(String sharerId,String fileId,String notices)
+    public String uploadFile(String sharerId,String fileIdMd5,String notices)
     {
         try{
             if(notices.length() < 1 || notices.length() > 100)
@@ -36,7 +36,6 @@ public class FileShareService
             e.printStackTrace();
             return "NoticesLengthError";
         }
-        String fileIdMd5 = Md5Util.getMd5(fileId);
 
         if(fileShareDao.uploadFile(sharerId,fileIdMd5,notices, GetNowTime.getNowTime(),"1"))
         {

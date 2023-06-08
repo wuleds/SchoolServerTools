@@ -171,4 +171,15 @@ public class UserService
         }
         return "BanControllerFail";
     }
+
+    /**设置头像**/
+    public String setProfilePhoto(String id,String photoMd5)
+    {
+        if(userDao.setProfilePhoto(id,photoMd5))
+        {
+            return "setProfilePhotoSuccess";
+        }
+        return "setProfilePhotoFail";
+    }
+
 }
