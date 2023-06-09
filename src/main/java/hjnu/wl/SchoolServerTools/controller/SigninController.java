@@ -2,6 +2,8 @@ package hjnu.wl.SchoolServerTools.controller;
 
 import hjnu.wl.SchoolServerTools.model.User;
 import hjnu.wl.SchoolServerTools.service.UserService;
+import hjnu.wl.SchoolServerTools.util.RequestAndResponse;
+import jakarta.servlet.http.Cookie;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -20,13 +22,23 @@ public class SigninController
 
     /**用户登录
      * 测试通过**/
-    @PostMapping("/user")
+    @RequestMapping("/user")
     @ResponseBody
     public String userSignin(User user)
     {
         String userId = user.getUserId();
         String userPassword = user.getUserPassword();
-        return userService.userSignin(userId,userPassword);
+        String result = userService.userSignin(userId,userPassword);
+
+        if(result.equals("SigninSuccess"))
+        {
+            System.out.println("00000");
+            Cookie cookie = new Cookie("userId",userId);
+            cookie.setMaxAge(60*60*24*7);
+            RequestAndResponse.getResponse().addCookie(cookie);
+            System.out.println("用户登录成功:"+userId);
+        }
+        return result;
     }
 
     /**管理员登录
@@ -37,6 +49,14 @@ public class SigninController
     {
         String controllerId = controller.getControllerId();
         String controllerPassword = controller.getControllerPassword();
-        return userService.controllerSignin(controllerId,controllerPassword);
+        String result = userService.controllerSignin(controllerId,controllerPassword);
+        if(result.equals("RegisterSuccess"))
+        {
+            Cookie cookie = new Cookie("controller",controllerId);
+            cookie.setMaxAge(60*60*24*7);
+            RequestAndResponse.getResponse().addCookie(cookie);
+            System.out.println("管理员登录成功:"+controllerId);
+        }
+        return result;
     }
 }
