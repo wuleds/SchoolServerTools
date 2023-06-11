@@ -19,6 +19,14 @@ public interface DataShareDao
     @Select("select * from dataShare where state = '1'")
     ArrayList<DataShare> getAllDataShare();
 
+    /**分页查询**/
+    @Select("select * from dataShare where state = '1' limit #{n},#{m}")
+    ArrayList<DataShare> getLimit(int n,int m);
+
+    /**获取信息总数**/
+    @Select("select count(*) from dataShare where state = '1'")
+    int getCount();
+
     /**根据id获取信息**/
     @Select("select * from dataShare where dataShareId = #{dataShareId} and state = '1'")
     DataShare getDataShareById(int dataShareId);

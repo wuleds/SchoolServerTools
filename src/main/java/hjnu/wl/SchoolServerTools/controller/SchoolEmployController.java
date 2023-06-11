@@ -33,11 +33,11 @@ public class SchoolEmployController
         String hrPhoneNumber = schoolEmploy.getHrPhoneNumber();   //联系电话
         String image = "null";                                    //图片
         String companyName = schoolEmploy.getCompanyName();       //公司名称
-        String jobName = schoolEmploy.getJobName();                 //工作岗位
-        String salary = schoolEmploy.getSalary();                    //工资
+        String jobName = schoolEmploy.getJobName();                //工作岗位
+        String salary = schoolEmploy.getSalary();                  //工资
         String jobPower = schoolEmploy.getJobPower();              //工作能力要求
-        String jobContent = schoolEmploy.getJobContent();              //工作内容
-        String jobNotices = schoolEmploy.getJobNotices();             //备注
+        String jobContent = schoolEmploy.getJobContent();           //工作内容
+        String jobNotices = schoolEmploy.getJobNotices();           //备注
 
         // 处理文件
         if (!file.isEmpty()) {

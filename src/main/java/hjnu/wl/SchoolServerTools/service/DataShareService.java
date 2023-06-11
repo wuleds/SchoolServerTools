@@ -3,9 +3,14 @@ package hjnu.wl.SchoolServerTools.service;
 
 import com.alibaba.fastjson.JSON;
 import hjnu.wl.SchoolServerTools.dao.DataShareDao;
+import hjnu.wl.SchoolServerTools.domain.DataShare;
+import hjnu.wl.SchoolServerTools.domain.PostNum;
+import hjnu.wl.SchoolServerTools.util.GetNowTime;
 import hjnu.wl.SchoolServerTools.util.Md5Util;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
 
 @Service
 public class DataShareService
@@ -19,7 +24,7 @@ public class DataShareService
 
     /**发布信息
      * 测试通过**/
-    public String shareData(String sharerId,String title,String content,String imageMd5,String shareTime)
+    public String shareData(String sharerId,String title,String content,String imageMd5)
     {
         try{
             if(title.length() < 1 || title.length() > 10)
@@ -31,7 +36,7 @@ public class DataShareService
             return "NullPointerException";
         }
 
-        if(dataShareDao.shareData(sharerId,title,content,imageMd5,shareTime,"1"))
+        if(dataShareDao.shareData(sharerId,title,content,imageMd5, GetNowTime.getNowTime(),"1"))
             return "DataShareSuccess";
 
         return "DataShareFail";
@@ -43,6 +48,23 @@ public class DataShareService
     {
         String json = JSON.toJSONString(dataShareDao.getAllDataShare());
         return json;
+    }
+
+    /**分页查询
+     * 测试通过**/
+    public PostNum getLimit(int n, int m)
+    {
+        ArrayList<DataShare> list = dataShareDao.getLimit(n,m);
+        String json = JSON.toJSONString(list);
+        PostNum postNum = new PostNum(list.size(),json);
+        return postNum;
+    }
+
+    /**获取信息总数
+     * 测试通过**/
+    public int getCount()
+    {
+        return dataShareDao.getCount();
     }
 
     /**根据id获取信息
