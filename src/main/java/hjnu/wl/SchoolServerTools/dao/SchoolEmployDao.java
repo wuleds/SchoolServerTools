@@ -1,7 +1,7 @@
 package hjnu.wl.SchoolServerTools.dao;
 //汉江师范学院 数计学院 吴乐创建于2023/6/6 23:35
 
-import hjnu.wl.SchoolServerTools.model.SchoolEmploy;
+import hjnu.wl.SchoolServerTools.domain.SchoolEmploy;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
@@ -26,6 +26,14 @@ public interface SchoolEmployDao
      */
     @Select("select * from schoolEmploy where state='1' order by releaseTime")
     ArrayList<SchoolEmploy> getAllSchoolEmploy();
+
+    /**查询招聘信息总数**/
+    @Select("select count(schoolEmployId) from schoolEmploy where state='1'")
+    int getCount();
+
+    /**分页查询招聘信息**/
+    @Select("select * from schoolEmploy where state='1' order by releaseTime limit #{n},#{m} ")
+    ArrayList<SchoolEmploy> getLimitSchoolEmploy(int n,int m);
 
     /***
      * 根据id查询校园招聘信息

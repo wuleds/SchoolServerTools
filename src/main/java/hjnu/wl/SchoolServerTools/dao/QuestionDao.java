@@ -1,7 +1,7 @@
 package hjnu.wl.SchoolServerTools.dao;
 //汉江师范学院 数计学院 吴乐创建于2023/6/7 0:09
 
-import hjnu.wl.SchoolServerTools.model.Question;
+import hjnu.wl.SchoolServerTools.domain.Question;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
@@ -38,6 +38,14 @@ public interface QuestionDao
      */
     @Select("select * from question where state='1'")
     ArrayList<Question> getAllQuestions();
+
+    /**分页查询**/
+    @Select("select * from question where state = '1' limit #{n},#{m} ")
+    ArrayList<Question> getLimitQuestions(int n,int m);
+
+    /**查询问题总数**/
+    @Select("select count(questionId) from question where state = '1'")
+    int getCount();
 
     /***
      * 删除问题

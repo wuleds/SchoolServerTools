@@ -1,4 +1,4 @@
-package hjnu.wl.SchoolServerTools.model;
+package hjnu.wl.SchoolServerTools.domain;
 //汉江师范学院 数计学院 吴乐创建于2023/6/6 23:30
 
 /**
@@ -8,7 +8,7 @@ package hjnu.wl.SchoolServerTools.model;
 public class SchoolEmploy
 {
     private String schoolEmployId;  //校招信息id
-    private String hrName;          //hr的id
+    private String hrName;          //hr的名字
     private String hrPhoneNumber;   //联系电话
     private String image;           //图片
     private String companyName;     //公司名称

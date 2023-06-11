@@ -1,6 +1,6 @@
 package hjnu.wl.SchoolServerTools.dao;
 
-import hjnu.wl.SchoolServerTools.model.Transaction;
+import hjnu.wl.SchoolServerTools.domain.Transaction;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
@@ -27,6 +27,14 @@ public interface TransactionsDao
      */
     @Select("select * from transaction where state='1' order by releaseTime")
     ArrayList<Transaction> getAllTransactions();
+
+    /**查询二手货总数**/
+    @Select("select count(transactionId) from transaction where state='1'")
+    int getCount();
+
+    /**分页查询二手货**/
+    @Select("select * from transaction where state='1' order by  releaseTime limit #{n},#{m}")
+    ArrayList<Transaction> getLimitTransactions(int n,int m);
 
     /***
      * 根据id查询二手货信息

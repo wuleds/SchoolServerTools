@@ -1,4 +1,4 @@
-package hjnu.wl.SchoolServerTools.model;
+package hjnu.wl.SchoolServerTools.domain;
 //汉江师范学院 数计学院 吴乐创建于2023/6/6 22:52
 
 /**

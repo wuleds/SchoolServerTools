@@ -1,8 +1,8 @@
 package hjnu.wl.SchoolServerTools.dao;
 //汉江师范学院 数计学院 吴乐创建于2023/6/7 0:24
 
-import hjnu.wl.SchoolServerTools.model.Controller;
-import hjnu.wl.SchoolServerTools.model.User;
+import hjnu.wl.SchoolServerTools.domain.Controller;
+import hjnu.wl.SchoolServerTools.domain.User;
 import org.apache.ibatis.annotations.*;
 
 /***

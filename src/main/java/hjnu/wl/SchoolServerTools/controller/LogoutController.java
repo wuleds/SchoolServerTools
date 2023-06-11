@@ -13,17 +13,17 @@ public class LogoutController
 {
     @RequestMapping("/logout")
     @ResponseBody
-    public String userLogout(String ID)
+    public String userLogout()
     {
         String result = "LogoutFail";
         Cookie[] cookies = RequestAndResponse.getRequest().getCookies();
         for(Cookie cookie:cookies)
         {
-            if(cookie.getName().equals("Id"))
+            if("edu.hjnu.wl-userId".equals(cookie.getName()) || "edu.hjnu.wl-controllerId".equals(cookie.getName()))
             {
                 cookie.setMaxAge(0);
                 RequestAndResponse.getResponse().addCookie(cookie);
-                System.out.println("用户注销："+ID);
+                System.out.println("用户注销");
                 result = "LogoutSuccess";
             }
         }

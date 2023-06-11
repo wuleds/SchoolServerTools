@@ -1,7 +1,7 @@
 package hjnu.wl.SchoolServerTools.dao;
 //汉江师范学院 数计学院 吴乐创建于2023/6/6 22:40
 
-import hjnu.wl.SchoolServerTools.model.LostFound;
+import hjnu.wl.SchoolServerTools.domain.LostFound;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;

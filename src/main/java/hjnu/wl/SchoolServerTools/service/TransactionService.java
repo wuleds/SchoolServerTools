@@ -3,10 +3,14 @@ package hjnu.wl.SchoolServerTools.service;
 
 import com.alibaba.fastjson.JSON;
 import hjnu.wl.SchoolServerTools.dao.TransactionsDao;
+import hjnu.wl.SchoolServerTools.domain.PostNum;
+import hjnu.wl.SchoolServerTools.domain.Transaction;
 import hjnu.wl.SchoolServerTools.util.GetNowTime;
 import hjnu.wl.SchoolServerTools.util.Md5Util;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
 
 /**
  * 二手货业务
@@ -22,6 +26,13 @@ public class TransactionService
     }
 
     /**发布二手货信息
+     * @return
+     * "phoneNumberLengthError" 手机号长度错误
+     * "goodsNameLengthError" 商品名长度错误
+     * "goodsPriceLengthError" 商品价格长度错误
+     * "goodsDescribeLengthError" 商品描述长度错误
+     * "ReleaseTransactionSuccess" 发布二手货成功
+     * "ReleaseTransactionFail" 发布二手货失败
      * 测试通过*/
     public String releaseTransaction(String sellerId,String phoneNumber,String goodsName,String goodsImageMd5,String goodsPrice,String goodsDescribe)
     {
@@ -46,18 +57,36 @@ public class TransactionService
 
     /**查询所有二手货信息
      * 测试通过*/
-    public String getAllTransactions()
+    public PostNum getAllTransactions()
     {
-        String json = JSON.toJSONString(transactionsDao.getAllTransactions());
-        return json;
+        ArrayList<Transaction> list = transactionsDao.getAllTransactions();
+        String json = JSON.toJSONString(list);
+        PostNum postNum = new PostNum(list.size(), json);
+        return postNum;
+    }
+
+    /**分页查询二手货**/
+    public PostNum getLimitTransactions(int n,int m)
+    {
+        ArrayList<Transaction> list = transactionsDao.getLimitTransactions(n,m);
+        String json = JSON.toJSONString(list);
+        PostNum postNum = new PostNum(list.size(), json);
+        return postNum;
+    }
+
+    /**获取二手货总数**/
+    public int getCount()
+    {
+        return transactionsDao.getCount();
     }
 
     /**根据id查询二手货信息
      * 测试通过*/
-    public String getTransactionById(int transactionId)
+    public PostNum getTransactionById(int transactionId)
     {
         String json = JSON.toJSONString(transactionsDao.getTransactionById(transactionId));
-        return json;
+        PostNum postNum = new PostNum("null".equals(json)?0:1,json);
+        return postNum;
     }
 
     /**删除二手货信息

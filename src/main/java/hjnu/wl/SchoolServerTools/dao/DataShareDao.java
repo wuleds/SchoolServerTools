@@ -1,6 +1,6 @@
 package hjnu.wl.SchoolServerTools.dao;
 
-import hjnu.wl.SchoolServerTools.model.DataShare;
+import hjnu.wl.SchoolServerTools.domain.DataShare;
 import org.apache.ibatis.annotations.*;
 
 import java.util.ArrayList;

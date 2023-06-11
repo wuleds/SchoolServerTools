@@ -3,10 +3,14 @@ package hjnu.wl.SchoolServerTools.service;
 
 import com.alibaba.fastjson.JSON;
 import hjnu.wl.SchoolServerTools.dao.SchoolEmployDao;
+import hjnu.wl.SchoolServerTools.domain.PostNum;
+import hjnu.wl.SchoolServerTools.domain.SchoolEmploy;
 import hjnu.wl.SchoolServerTools.util.GetNowTime;
 import hjnu.wl.SchoolServerTools.util.Md5Util;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
 
 /**学校招聘业务逻辑层*/
 @Service
@@ -50,11 +54,27 @@ public class SchoolEmployService
         return "releaseFail";
     }
 
-    /**根据id学校招聘信息*/
-    public String getSchoolEmployById(int schoolEmployId)
+    /**根据id获取学校招聘信息*/
+    public PostNum getSchoolEmployById(int schoolEmployId)
     {
         String json = JSON.toJSONString(schoolEmployDao.getSchoolEmployById(schoolEmployId));
-        return json;
+        PostNum postNum = new PostNum("null".equals(json)?0:1,json);
+        return postNum;
+    }
+
+    /**分页查询招聘信息**/
+    public PostNum getLimit(int n,int m)
+    {
+        ArrayList<SchoolEmploy> list = schoolEmployDao.getLimitSchoolEmploy(n,m);
+        String json = JSON.toJSONString(list);
+        PostNum postNum = new PostNum(list.size(),json);
+        return postNum;
+    }
+
+    /**查询招聘信息总数**/
+    public int getCount()
+    {
+        return schoolEmployDao.getCount();
     }
 
     /**删除学校招聘信息*/
@@ -66,9 +86,12 @@ public class SchoolEmployService
     }
 
     /**获取所有的学校招聘信息*/
-    public String getAllSchoolEmploy()
+    public PostNum getAllSchoolEmploy()
     {
-        String json = JSON.toJSONString(schoolEmployDao.getAllSchoolEmploy());
-        return json;
+        ArrayList<SchoolEmploy> list = schoolEmployDao.getAllSchoolEmploy();
+        String json = JSON.toJSONString(list);
+        PostNum postNum = new PostNum(list.size(), json);
+
+        return postNum;
     }
 }

@@ -2,6 +2,7 @@ package hjnu.wl.SchoolServerTools.service;
 //汉江师范学院 数计学院 吴乐创建于2023/6/7 0:56
 
 import hjnu.wl.SchoolServerTools.dao.UserDao;
+import hjnu.wl.SchoolServerTools.util.Md5Util;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,7 +17,16 @@ public class UserService
         UserService.userDao = userDao;
     }
 
-    /**用户注册**/
+    /**用户注册
+     * @return
+     *  return "RegisterFail";
+     *  return "RegisterSuccess";
+     *  return "IdLengthError";
+     *  return "PasswordLengthError";
+     *  return "NameLengthError";
+     *  return "IdExistError";
+     *  return "NullPointerException";
+     * **/
     public String userRegister(String userId,String userName,String userSex,String userPassword)
     {
         try {
@@ -35,7 +45,9 @@ public class UserService
         if(userDao.isUserExist(userId) != null || userDao.isControllerExist(userId) != null)
             return "IdExistError";
 
-        if(userDao.userRegister(userId,userName,userSex,userPassword,"1"))
+        String passwdMd5 = Md5Util.getMd5(userPassword);
+
+        if(userDao.userRegister(userId,userName,userSex,passwdMd5,"1"))
             return "RegisterSuccess";
 
         return "RegisterFail";
@@ -64,7 +76,9 @@ public class UserService
         if(userDao.isUserExist(controllerId) != null || userDao.isControllerExist(controllerId) != null)
             return "IdExistError";
 
-        if(userDao.controllerRegister(controllerId,controllerName,controllerPassword,controllerSex,phoneNumber,appointment,"1"))
+        String passwdMd5 = Md5Util.getMd5(controllerPassword);
+
+        if(userDao.controllerRegister(controllerId,controllerName,passwdMd5,controllerSex,phoneNumber,appointment,"1"))
             return "RegisterSuccess";
 
         return "RegisterFail";
@@ -76,8 +90,9 @@ public class UserService
         //判断用户id是否已经存在,如果存在，则进行下一步
         if(userDao.isUserExist(userId) != null)
         {
+            String passwdMd5 = Md5Util.getMd5(userPassword);
             //登录
-            if(userDao.userSignin(userId,userPassword) != null)
+            if(userDao.userSignin(userId,passwdMd5) != null)
             {
                 return "SigninSuccess";
             }
@@ -91,8 +106,9 @@ public class UserService
         //判断管理员id是否已经存在,如果存在，则进行下一步
         if(userDao.isControllerExist(controllerId) != null)
         {
+            String passwdMd5 = Md5Util.getMd5(controllerPassword);
             //登录
-            if(userDao.controllerSignin(controllerId,controllerPassword) != null)
+            if(userDao.controllerSignin(controllerId,passwdMd5) != null)
             {
                 return "SigninSuccess";
             }
@@ -110,8 +126,9 @@ public class UserService
                 return "NameLengthError";
             if(userPassword.length() < 6 || userPassword.length() > 10)
                 return "PasswordLengthError";
+            String passwdMd5 = Md5Util.getMd5(userPassword);
             //修改
-            if(userDao.updateUserData(userId,userName,userSex,userPassword) != null)
+            if(userDao.updateUserData(userId,userName,userSex,passwdMd5) != null)
             {
                 return "UpdateSuccess";
             }
@@ -133,8 +150,9 @@ public class UserService
                 return "PhoneNumberLengthError";
             if(appointment.length() < 6 || appointment.length() > 10)
                 return "AppointmentLengthError";
+            String passwdMd5 = Md5Util.getMd5(controllerPassword);
             //修改
-            if(userDao.updateControllerData(controllerId,controllerName,controllerSex,controllerPassword,phoneNumber,appointment) != null)
+            if(userDao.updateControllerData(controllerId,controllerName,controllerSex,passwdMd5,phoneNumber,appointment) != null)
             {
                 return "UpdateSuccess";
             }

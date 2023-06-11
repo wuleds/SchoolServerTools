@@ -1,6 +1,6 @@
-package hjnu.wl.SchoolServerTools.controller;
+package hjnu.wl.SchoolServerTools.SinginAndRegister;
 
-import hjnu.wl.SchoolServerTools.model.User;
+import hjnu.wl.SchoolServerTools.domain.User;
 import hjnu.wl.SchoolServerTools.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -15,8 +15,12 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @RequestMapping("/register")
 public class RegisterController
 {
+    private static UserService userService;
     @Autowired
-    private UserService userService;
+    private void setUserService(UserService userService)
+    {
+        RegisterController.userService = userService;
+    }
 
     /**用户注册
      * 测试通过**/
@@ -36,7 +40,7 @@ public class RegisterController
      * 测试成功**/
     @PostMapping("/controller")
     @ResponseBody
-    public String controllerRegister(hjnu.wl.SchoolServerTools.model.Controller controller)
+    public String controllerRegister(hjnu.wl.SchoolServerTools.domain.Controller controller)
     {
         String controllerId = controller.getControllerId();
         String controllerName = controller.getControllerName();

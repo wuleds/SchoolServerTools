@@ -1,7 +1,8 @@
-package hjnu.wl.SchoolServerTools.controller;
+package hjnu.wl.SchoolServerTools.SinginAndRegister;
 
-import hjnu.wl.SchoolServerTools.model.User;
+import hjnu.wl.SchoolServerTools.domain.User;
 import hjnu.wl.SchoolServerTools.service.UserService;
+import hjnu.wl.SchoolServerTools.util.Md5Util;
 import hjnu.wl.SchoolServerTools.util.RequestAndResponse;
 import jakarta.servlet.http.Cookie;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,10 +31,10 @@ public class SigninController
         String userPassword = user.getUserPassword();
         String result = userService.userSignin(userId,userPassword);
 
-        if(result.equals("SigninSuccess"))
+        if("SigninSuccess".equals(result))
         {
-            System.out.println("00000");
-            Cookie cookie = new Cookie("userId",userId);
+            Cookie cookie = new Cookie("edu.hjnu.wl-userId",userId);
+            cookie.setValue(Md5Util.getMd5(userPassword));
             cookie.setMaxAge(60*60*24*7);
             RequestAndResponse.getResponse().addCookie(cookie);
             System.out.println("用户登录成功:"+userId);
@@ -45,14 +46,15 @@ public class SigninController
      * 测试通过**/
     @PostMapping("/controller")
     @ResponseBody
-    public String controllerSignin(hjnu.wl.SchoolServerTools.model.Controller controller)
+    public String controllerSignin(hjnu.wl.SchoolServerTools.domain.Controller controller)
     {
         String controllerId = controller.getControllerId();
         String controllerPassword = controller.getControllerPassword();
         String result = userService.controllerSignin(controllerId,controllerPassword);
-        if(result.equals("RegisterSuccess"))
+        if("RegisterSuccess".equals(result))
         {
-            Cookie cookie = new Cookie("controller",controllerId);
+            Cookie cookie = new Cookie("edu.hjnu.wl-controllerId",controllerId);
+            cookie.setValue(Md5Util.getMd5(controllerPassword));
             cookie.setMaxAge(60*60*24*7);
             RequestAndResponse.getResponse().addCookie(cookie);
             System.out.println("管理员登录成功:"+controllerId);

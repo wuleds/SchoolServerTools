@@ -1,4 +1,4 @@
-package hjnu.wl.SchoolServerTools.model;
+package hjnu.wl.SchoolServerTools.domain;
 
 /**
  * @author wule

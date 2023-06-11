@@ -1,4 +1,4 @@
-package hjnu.wl.SchoolServerTools.model;
+package hjnu.wl.SchoolServerTools.domain;
 //汉江师范学院 数计学院 吴乐创建于2023/6/7 0:06
 
 /**
@@ -7,7 +7,7 @@ package hjnu.wl.SchoolServerTools.model;
  */
 public class Question
 {
-    private String questionId;  //问题id
+    private int questionId;  //问题id
     private String question;    //问题
     private String notices;     //描述
     private String answer;      //答案
@@ -19,11 +19,11 @@ public class Question
 
     public Question() {}
 
-    public String getQuestionId() {
+    public int getQuestionId() {
         return questionId;
     }
 
-    public void setQuestionId(String questionId) {
+    public void setQuestionId(int questionId) {
         this.questionId = questionId;
     }
 

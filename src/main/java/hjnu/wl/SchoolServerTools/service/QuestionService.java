@@ -3,9 +3,13 @@ package hjnu.wl.SchoolServerTools.service;
 
 import com.alibaba.fastjson.JSON;
 import hjnu.wl.SchoolServerTools.dao.QuestionDao;
+import hjnu.wl.SchoolServerTools.domain.PostNum;
+import hjnu.wl.SchoolServerTools.domain.Question;
 import hjnu.wl.SchoolServerTools.util.GetNowTime;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
 
 /***
  * 疑难解答
@@ -24,7 +28,7 @@ public class QuestionService
      * 发布问题
      * 测试通过
      */
-    public static String releaseQuestion(String quizzerId,String question,String notices)
+    public String releaseQuestion(String quizzerId,String question,String notices)
     {
         try{
             if(question.length() < 1 || question.length() > 100)
@@ -64,20 +68,40 @@ public class QuestionService
      * 查询所有问题
      * 测试通过
      */
-    public String getAllQuestions()
+    public PostNum getAllQuestions()
     {
-        String json = JSON.toJSONString(questionDao.getAllQuestions());
-        return json;
+        ArrayList<Question> list = questionDao.getAllQuestions();
+        String json = JSON.toJSONString(list);
+        PostNum postNum = new PostNum(list.size(),json);
+        return postNum;
+    }
+
+    /**分页查询**/
+    public PostNum getLimitQuestions(int n,int m)
+    {
+        ArrayList<Question> list = questionDao.getLimitQuestions(n,m);
+        String json = JSON.toJSONString(list);
+        PostNum postNum = new PostNum(list.size(),json);
+        return postNum;
+    }
+
+    /**获得问题总数**/
+    public int getCount()
+    {
+        return questionDao.getCount();
     }
 
     /***
      * 根据id查询问题
      * 测试通过
      */
-    public String getQuestionById(int questionId)
+    public PostNum getQuestionById(int questionId)
     {
-        String json = JSON.toJSONString(questionDao.getQuestionById(questionId));
-        return json;
+        Question question = questionDao.getQuestionById(questionId);
+        String json = JSON.toJSONString(question);
+
+        PostNum postNum = new PostNum("null".equals(json)?0:1,json);
+        return postNum;
     }
 
     /***
