@@ -3,10 +3,13 @@ package hjnu.wl.SchoolServerTools.service;
 
 import com.alibaba.fastjson.JSON;
 import hjnu.wl.SchoolServerTools.dao.FileShareDao;
+import hjnu.wl.SchoolServerTools.domain.FileShare;
+import hjnu.wl.SchoolServerTools.domain.PostNum;
 import hjnu.wl.SchoolServerTools.util.GetNowTime;
-import hjnu.wl.SchoolServerTools.util.Md5Util;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
 
 /**
  * 资源分享
@@ -36,13 +39,32 @@ public class FileShareService
             e.printStackTrace();
             return "NoticesLengthError";
         }
-
-        if(fileShareDao.uploadFile(sharerId,fileIdMd5,notices, GetNowTime.getNowTime(),"1"))
+        if(fileShareDao.uploadFile(sharerId,fileIdMd5,notices,GetNowTime.getNowTime(),"1"))
         {
             return "FileShareSuccess";
         }
-
         return "FileShareFail";
+    }
+
+    /**
+     * 分页获取资源分享
+     * 测试通过
+     */
+    public PostNum getLimit(int n, int m)
+    {
+        ArrayList<FileShare> list = fileShareDao.getLimit(n,m);
+        String json = JSON.toJSONString(list);
+        PostNum postNum = new PostNum(list.size(),json);
+        return postNum;
+    }
+
+    /**
+     * 获取资源分享总数
+     * 测试通过
+     */
+    public int getCount()
+    {
+        return fileShareDao.getCount();
     }
 
     /**
@@ -58,20 +80,24 @@ public class FileShareService
      * 获取所有资源分享
      * 测试通过
      */
-    public String getAllFileShare()
+    public PostNum getAllFileShare()
     {
-        String json = JSON.toJSONString(fileShareDao.getAllFileShare());
-        return json;
+        ArrayList<FileShare> list = fileShareDao.getAllFileShare();
+        String json = JSON.toJSONString(list);
+        PostNum postNum = new PostNum(list.size(),json);
+        return postNum;
     }
 
     /**
      * 根据资源id查看资源分享
      * 测试通过
      */
-    public String getFileShareById(int fileShareId)
+    public PostNum getFileShareById(int fileShareId)
     {
-        String json = JSON.toJSONString(fileShareDao.getFileShareById(fileShareId));
-        return json;
+        FileShare fIleShare = fileShareDao.getFileShareById(fileShareId);
+        String json = JSON.toJSONString(fIleShare);
+        PostNum postNum = new PostNum("null".equals(json)?0:1,json);
+        return postNum;
     }
 
     /**

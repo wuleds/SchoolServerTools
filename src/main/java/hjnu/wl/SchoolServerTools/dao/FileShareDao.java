@@ -1,7 +1,7 @@
 package hjnu.wl.SchoolServerTools.dao;
 //汉江师范学院 数计学院 吴乐创建于2023/6/7 23:47
 
-import hjnu.wl.SchoolServerTools.domain.FIleShare;
+import hjnu.wl.SchoolServerTools.domain.FileShare;
 import org.apache.ibatis.annotations.*;
 
 import java.util.ArrayList;
@@ -28,13 +28,21 @@ public interface FileShareDao
      * 获取所有资源分享
      */
     @Select("select * from fileShare where state='1'")
-    ArrayList<FIleShare> getAllFileShare();
+    ArrayList<FileShare> getAllFileShare();
+
+    /**分页获取资源分享*/
+    @Select("select * from fileShare where state='1' limit #{n},#{m}")
+    ArrayList<FileShare> getLimit(int n, int m);
+
+    /**获取资源分享总数*/
+    @Select("select count(*) from fileShare where state='1'")
+    int getCount();
 
     /**
      * 根据资源id查看资源分享
      */
     @Select("select * from fileShare where fileShareId=#{fileShareId} and state='1'")
-    FIleShare getFileShareById(int fileShareId);
+    FileShare getFileShareById(int fileShareId);
 
     /**
      * 根据资源id删除资源分享

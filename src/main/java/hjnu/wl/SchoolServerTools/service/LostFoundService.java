@@ -3,10 +3,15 @@ package hjnu.wl.SchoolServerTools.service;
 
 import com.alibaba.fastjson.JSON;
 import hjnu.wl.SchoolServerTools.dao.LostFoundDao;
+import hjnu.wl.SchoolServerTools.domain.LostFound;
+import hjnu.wl.SchoolServerTools.domain.PostNum;
 import hjnu.wl.SchoolServerTools.util.GetNowTime;
 import hjnu.wl.SchoolServerTools.util.Md5Util;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.awt.*;
+import java.util.ArrayList;
 
 /**失物招领业务逻辑层*/
 @Service
@@ -40,17 +45,36 @@ public class LostFoundService
     }
 
     /**查询所有失物招领**/
-    public String  getAllLostFound()
+    public PostNum  getAllLostFound()
     {
-        String json = JSON.toJSONString(lostFoundDao.getAllLostFound());
-        return json;
+        ArrayList<LostFound> list = lostFoundDao.getAllLostFound();
+        String json = JSON.toJSONString(list);
+        PostNum postNum = new PostNum(list.size(),json);
+        return postNum;
+    }
+
+    /**分页查询**/
+    public PostNum getLimit(int n, int m)
+    {
+        ArrayList<LostFound> list = lostFoundDao.getLostFoundByPage(n,m);
+        String json = JSON.toJSONString(list);
+        PostNum postNum = new PostNum(list.size(),json);
+        return postNum;
+    }
+
+    /**查询总数**/
+    public int getLostFoundCount()
+    {
+        return lostFoundDao.getCount();
     }
 
     /**根据id查询失物招领**/
-    public String getLostFoundById(int lostFoundId)
+    public PostNum getLostFoundById(int lostFoundId)
     {
-        String json = JSON.toJSONString(lostFoundDao.getLostFoundById(lostFoundId));
-        return json;
+        LostFound lostFound = lostFoundDao.getLostFoundById(lostFoundId);
+        String json = JSON.toJSONString(lostFound);
+        PostNum postNum = new PostNum("null".equals(json)?0:1,json);
+        return postNum;
     }
 
     /**根据id删除失物招领**/

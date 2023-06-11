@@ -29,6 +29,18 @@ public interface LostFoundDao
     @Select("select * from lostFound where state='1' order by releaseTime")
     ArrayList<LostFound> getAllLostFound();
 
+    /**分页查询
+     * 测试通过
+     */
+    @Select("select * from lostFound where state='1' order by releaseTime limit #{n},#{m}")
+    ArrayList<LostFound> getLostFoundByPage(int n,int m);
+
+    /**获取失物招领总数
+     * 测试通过
+     */
+    @Select("select count(*) from lostFound where state='1'")
+    int getCount();
+
     /***
      * 根据id查询失物招领信息
      * 测试通过

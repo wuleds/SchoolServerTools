@@ -1,7 +1,7 @@
 package hjnu.wl.SchoolServerTools.domain;
 //汉江师范学院 数计学院 吴乐创建于2023/6/7 23:55
 
-public class FIleShare
+public class FileShare
 {
     private String fileShareId;
     private String sharerId;
@@ -10,7 +10,7 @@ public class FIleShare
     private String shareTime;
     private String state;
 
-    public FIleShare() {}
+    public FileShare() {}
 
     public String getFileShareId() {
         return fileShareId;
