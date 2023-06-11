@@ -1,10 +1,56 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>校园失物招领平台</title>
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/index.css">
 </head>
 <body>
+<nav class="navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">校园失物招领平台</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse " id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
 
+                    <navbar onclick="window.location.href ='navigate.html'">丢失物品</navbar>
+                </li>
+                <li class="nav-item">
+                    <navbar onclick="window.location.href ='schooolemploy.html'">捡到物品</navbar>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="#">拾到者信息</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="#">物品信息</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="#">拾到物品照片</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="#">拾到物品描述</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="#">我的</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="container my-5">
+    <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="搜索" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">搜索</button>
+    </form>
+    <h1>欢迎使用校园失物招领平台</h1>
+    <button class="btn btn-primary">点击这里返回首页</button>
+</div>
+<script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.0.1/js/bootstrap.min.js"></script>
+<script src="/js/index.js"></script>
 </body>
 </html>
