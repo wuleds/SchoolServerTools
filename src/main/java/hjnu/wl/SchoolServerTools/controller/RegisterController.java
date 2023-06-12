@@ -1,9 +1,10 @@
-package hjnu.wl.SchoolServerTools.SinginAndRegister;
+package hjnu.wl.SchoolServerTools.controller;
 
 import hjnu.wl.SchoolServerTools.domain.User;
 import hjnu.wl.SchoolServerTools.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 /**
  * @author wule
  */
+@CrossOrigin
 @Controller
 @RequestMapping("/register")
 public class RegisterController

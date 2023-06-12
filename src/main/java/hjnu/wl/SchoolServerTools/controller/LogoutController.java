@@ -4,10 +4,12 @@ package hjnu.wl.SchoolServerTools.controller;
 import hjnu.wl.SchoolServerTools.util.RequestAndResponse;
 import jakarta.servlet.http.Cookie;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 /**注销**/
+@CrossOrigin
 @Controller
 public class LogoutController
 {
