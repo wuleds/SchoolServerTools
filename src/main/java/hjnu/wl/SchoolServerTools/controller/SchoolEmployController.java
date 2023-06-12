@@ -3,7 +3,6 @@ package hjnu.wl.SchoolServerTools.controller;
 
 import hjnu.wl.SchoolServerTools.domain.PostNum;
 import hjnu.wl.SchoolServerTools.domain.SchoolEmploy;
-import hjnu.wl.SchoolServerTools.domain.Transaction;
 import hjnu.wl.SchoolServerTools.service.SchoolEmployService;
 import hjnu.wl.SchoolServerTools.util.FileSave;
 import org.springframework.beans.factory.annotation.Autowired;

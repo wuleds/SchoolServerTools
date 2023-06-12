@@ -7,7 +7,7 @@ package hjnu.wl.SchoolServerTools.domain;
  */
 public class LostFound
 {
-    private String lostFoundId;      //失物招领id
+    private int lostFoundId;      //失物招领id
     private String userId;           //用户id
     private String phoneNumber;      //联系电话
     private String thingName;        //物品名称
@@ -18,11 +18,11 @@ public class LostFound
 
     public LostFound() {}
 
-    public String getLostFoundId() {
+    public int getLostFoundId() {
         return lostFoundId;
     }
 
-    public void setLostFoundId(String lostFoundId) {
+    public void setLostFoundId(int lostFoundId) {
         this.lostFoundId = lostFoundId;
     }
 

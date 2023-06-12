@@ -23,7 +23,19 @@ public class SchoolEmployService
         SchoolEmployService.schoolEmployDao = schoolEmployDao;
     }
 
-    /**发布学校招聘信息*/
+    /**发布学校招聘信息
+     * @return releaseSuccess:发布成功
+     *         releaseFail:发布失败
+     *         hrNameLengthError:hr名字长度错误
+     *         hrPhoneNumberLengthError:hr电话号码长度错误
+     *         companyNameLengthError:公司名字长度错误
+     *         salaryLengthError:工资长度错误
+     *         jobNameLengthError:工作名字长度错误
+     *         jobPowerLengthError:工作能力要求长度错误
+     *         jobContentLengthError:工作内容长度错误
+     *         jobNoticesLengthError:工作备注长度错误
+     *         NullPointException:输入为空
+     * */
     public String releaseSchoolEmploy(String hrName,String hrPhoneNumber,String imageMd5,String companyName,String jobName,String salary,String jobPower,String jobContent,String jobNotices)
     {
         try{
@@ -77,7 +89,10 @@ public class SchoolEmployService
         return schoolEmployDao.getCount();
     }
 
-    /**删除学校招聘信息*/
+    /**删除学校招聘信息
+     * @return deleteSuccess:删除成功
+     *         deleteFail:删除失败
+     * */
     public String deleteSchoolEmploy(int schoolEmployId)
     {
         if(schoolEmployDao.deleteSchoolEmploy(schoolEmployId))

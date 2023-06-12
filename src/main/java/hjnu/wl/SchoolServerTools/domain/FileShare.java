@@ -3,7 +3,7 @@ package hjnu.wl.SchoolServerTools.domain;
 
 public class FileShare
 {
-    private String fileShareId;
+    private int fileShareId;
     private String sharerId;
     private String fileId;
     private String notices;
@@ -12,11 +12,11 @@ public class FileShare
 
     public FileShare() {}
 
-    public String getFileShareId() {
+    public int getFileShareId() {
         return fileShareId;
     }
 
-    public void setFileShareId(String fileShareId) {
+    public void setFileShareId(int fileShareId) {
         this.fileShareId = fileShareId;
     }
 

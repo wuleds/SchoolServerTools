@@ -27,6 +27,10 @@ public class FileShareService
     /**
      * 发布资源
      * 测试通过
+     * @return FileShareSuccess
+     * @return FileShareFail
+     * @return NoticesLengthError
+     * @return FileIdMd5Error
      */
     public String uploadFile(String sharerId,String fileIdMd5,String notices)
     {
@@ -103,6 +107,8 @@ public class FileShareService
     /**
      * 根据资源id删除资源分享
      * 测试通过
+     * @return "DeleteFileShareSuccess"
+     *  "DeleteFileShareFail   "
      */
     public String deleteFileShare(int fileShareId)
     {

@@ -7,7 +7,7 @@ package hjnu.wl.SchoolServerTools.domain;
  */
 public class SchoolEmploy
 {
-    private String schoolEmployId;  //校招信息id
+    private int schoolEmployId;  //校招信息id
     private String hrName;          //hr的名字
     private String hrPhoneNumber;   //联系电话
     private String image;           //图片
@@ -22,11 +22,11 @@ public class SchoolEmploy
 
     public SchoolEmploy() {}
 
-    public String getSchoolEmployId() {
+    public int getSchoolEmployId() {
         return schoolEmployId;
     }
 
-    public void setSchoolEmployId(String schoolEmployId) {
+    public void setSchoolEmployId(int schoolEmployId) {
         this.schoolEmployId = schoolEmployId;
     }
 

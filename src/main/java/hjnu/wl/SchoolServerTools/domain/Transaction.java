@@ -7,7 +7,7 @@ package hjnu.wl.SchoolServerTools.domain;
  */
 public class Transaction
 {
-    private String transactionId;   //二手货信息id
+    private int transactionId;   //二手货信息id
     private String sellerId;        //卖家id
     private String phoneNumber;     //联系电话
     private String goodsName;       //商品名称
@@ -19,11 +19,11 @@ public class Transaction
 
     public Transaction(){}
 
-    public String getTransactionId() {
+    public int getTransactionId() {
         return transactionId;
     }
 
-    public void setTransactionId(String transactionId) {
+    public void setTransactionId(int transactionId) {
         this.transactionId = transactionId;
     }
 

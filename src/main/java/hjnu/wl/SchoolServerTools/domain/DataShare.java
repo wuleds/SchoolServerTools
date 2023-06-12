@@ -6,7 +6,7 @@ package hjnu.wl.SchoolServerTools.domain;
  */
 public class DataShare
 {
-    private String dataShareId;
+    private int dataShareId;
     private String sharerId;
     private String title;
     private String content;
@@ -16,11 +16,11 @@ public class DataShare
 
     public DataShare() {}
 
-    public String getDataShareId() {
+    public int getDataShareId() {
         return dataShareId;
     }
 
-    public void setDataShareId(String dataShareId) {
+    public void setDataShareId(int dataShareId) {
         this.dataShareId = dataShareId;
     }
 

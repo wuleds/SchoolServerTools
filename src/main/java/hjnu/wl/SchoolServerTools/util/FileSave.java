@@ -13,7 +13,7 @@ public class FileSave
         String windowsPath = "D:\\MyProgramProjects\\SchoolServerTools\\src\\main\\resources\\teststatic\\file\\";
         String linuxPath = "/home/wule/file/";
 
-        String path = windowsPath;
+        String path = linuxPath;
 
         try {
             //获取文件名
