@@ -6,7 +6,6 @@ import hjnu.wl.SchoolServerTools.dao.DataShareDao;
 import hjnu.wl.SchoolServerTools.domain.DataShare;
 import hjnu.wl.SchoolServerTools.domain.PostNum;
 import hjnu.wl.SchoolServerTools.util.GetNowTime;
-import hjnu.wl.SchoolServerTools.util.Md5Util;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

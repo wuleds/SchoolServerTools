@@ -25,9 +25,9 @@ public class DownloadFileController
         String path = "D:\\MyProgramProjects\\SchoolServerTools\\src\\main\\resources\\teststatic\\file";
 
         //linux
-        //String path = "/usr/upload";
+        //String path = "/home/wule/file";
 
-        String targetFile = path + "\\" + imageName;
+        String targetFile = path + "/" + imageName;
 
         File file = new File(targetFile);
         byte[] bytes = new byte[1024];
