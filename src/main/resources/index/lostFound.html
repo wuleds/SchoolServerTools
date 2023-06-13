@@ -1,194 +1,230 @@
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><HTML><HEAD><TITLE>失物招领</TITLE><META Name="keywords" Content="失物招领" />
-
-
-
-
-
-    <META content="text/html; charset=UTF-8" http-equiv="Content-Type"><LINK rel="stylesheet" type="text/css" href="style/css.css">
-    <STYLE type="text/css">
-        <!--
-        .STYLE1 {font-weight: bold;}
-        .style6 {color: #003399;}
-        -->
-    </STYLE>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=1200, initial-scale=1">
+    <title>失物招领</title><META Name="keywords" Content="失物招领" />
 
 
-    </LINK><!--Announced by Visual SiteBuilder 9-->
-    <link rel="stylesheet" type="text/css" href="static/lostFound.css" />
-    <script language="javascript" src="lostFound.js"></script>
-    <!-- CustomerNO:77656262657232307668475153515742000200014152 -->
-    <link rel="stylesheet" type="text/css" href="list.vsb.css" />
-    <script type="text/javascript" src="/system/resource/js/counter.js"></script>
-    <script type="text/javascript">_jsq_(1046,'/list.jsp',-1,1264505612)</script>
-</HEAD>
-<BODY>
-<TABLE height="74" cellspacing="0" cellpadding="0" width="980" align="center" border="0">
-    <TBODY>
-    <TR>
-        <TD width="100" align="center">
-            <table border="0" cellspacing="0" cellpadding="0"><tr><td><a href="" title="保卫处" alt="网站LOGO"><img src="/static/image/logo.jpg" border="0" alt="保卫处" title="保卫处"></a></td></tr></table></TD>
-            <TABLE cellspacing="0" cellpadding="0" width="499" border="0">
-                <TBODY>
-                <TR>
-                    <TD height="41">&nbsp;</TD></TR>
-                <TR>
-                    <TD align="right"><script language="javascript" src="/system/resource/js/calendar/simple.js"></script>
-                        <script language="JavaScript">
-                            //阳历
-                            var c_Calendar37700EnDateString;
+    <script type="text/javascript" src="js/jQuery-3.7.0.js"></script>
+    <script type="text/javascript" src="js/jQuery-3.7.0.js"></script>
+    <script type="text/javascript" src="js/jQuery-3.7.0.js"></script>
+    <!--Announced by Visual SiteBuilder 9-->
+    <script language="javascript" src="js/jQuery-3.7.0.js"></script>
+    <!-- CustomerNO:7765626265723230776447565352574103080004 -->
+</head>
+<body>
+<!--top-->
+<div class="stickWrap"></div>
+<div class="headerWrap">
 
-                            var c_Calendar37700WeekDayString;
+    <!-- 网站logo图片地址请在本组件"内容配置-网站logo"处填写 -->
+    <a href="index.html" class="logo"></a>
+    <div class="linSea">
+        <div class="link"></div>
+        <div class="search">
+            <script type="text/javascript">
+                function _nl_ys_check(){
 
-                            //阴历
-                            var c_Calendar37700CnDateString;
-                            //节气
-                            var c_Calendar37700JQString;
-                            //年
-                            var c_Calendar37700YearString;
-                            //月
-                            var c_Calendar37700MonthString;
-                            //日
-                            var c_Calendar37700DayString;
-                            //周
-                            var c_Calendar37700WeekString;
-                            //显示
-                            var c_Calendar37700ShowString;
-                            function RunGLNL37700()
-                            {
-                                var  sc =new Simple_Calendar ();
-                                sc.init();
-                                c_Calendar37700CnDateString=sc.getCnDateString();
-                                c_Calendar37700WeekDayString=sc.getCalendarWeekString();
-                                c_Calendar37700JQString=sc.getJQString();
-                                c_Calendar37700EnDateString=sc.getEnDateString();
-                                c_Calendar37700YearString=sc.getYearString();
-                                c_Calendar37700MonthString=sc.getMonthString();
-                                c_Calendar37700DayString=sc.getDayString();
-                                c_Calendar37700WeekString=sc.getWeekString();
-                                c_Calendar37700ShowString= "";
-                            }
-                            RunGLNL37700();
+                    var keyword = document.getElementById('showkeycode202473').value;
+                    if(keyword==null||keyword==""){
+                        alert("请输入你要检索的内容！");
+                        return false;
+                    }
+                    if(window.toFF==1)
+                    {
+                        document.getElementById("lucenenewssearchkey202473").value = Simplized(keyword );
+                    }else
+                    {
+                        document.getElementById("lucenenewssearchkey202473").value = keyword;
+                    }
+                    var  base64 = new Base64();
+                    document.getElementById("lucenenewssearchkey202473").value = base64.encode(document.getElementById("lucenenewssearchkey202473").value);
+                    new VsbFormFunc().disableAutoEnable(document.getElementById("showkeycode202473"));
+                    return true;
+                }
+            </script>
+            <form action="ssjg.jsp?wbtreeid=1095" method="post" id="au1a" name="au1a" onsubmit="return _nl_ys_check()" style="display: inline">
+                <input type="hidden" id="lucenenewssearchkey202473" name="lucenenewssearchkey" value=""><input type="hidden" id="_lucenesearchtype202473" name="_lucenesearchtype" value="1"><input type="hidden" id="searchScope202473" name="searchScope" value="0">
+                <input name="showkeycode" id="showkeycode202473" type="text" value="请输入关键字进行搜索" class="searchText" onfocus="if(this.value=='请输入关键字进行搜索')this.value='';" onblur="if(this.value=='')this.value='请输入关键字进行搜索';" />
+                <span>
+ <input type="image" src="images/search.png" align="absmiddle" name="" style="cursor: pointer;">
+</span>
+            </form><script language="javascript" src="/system/resource/js/base64.js"></script><script language="javascript" src="/system/resource/js/formfunc.js"></script>
 
-                            c_Calendar37700ShowString+=c_Calendar37700EnDateString;
-                            c_Calendar37700ShowString+="&nbsp;&nbsp;"+c_Calendar37700WeekDayString;
+        </div>
+    </div>
+</div>
 
+<div class="banner2" style="width:1200px;margin:0 auto 10px;"> <img src="image/banner2.png" /></div>
 
+<!--内页主体部分-->
+<div class="vsb-box">
+    <div class="vsb-container mainCon" containerid="2" columns="4">
+        <div class="local cleafix">
+            <i><img src="images/ico9.png" /></i>
+            <a href="index.htm">首页</a>
+            <em>&gt;</em>
+            <a href="swzl.htm" class="cur">失物招领</a>
 
-                        </script>
-                        <div id="c_lunar37700" class="fontstyle37700"></div>
-                        <script>
-                            document.getElementById("c_lunar37700").innerHTML = c_Calendar37700ShowString;
-                        </script>
-                    </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
-<TABLE cellspacing="0" cellpadding="0" width="980" align="center" border="0">
-    <TBODY>
-    <TR>
-        <TD background="images/dh.jpg" align="center">    <a href="index.jsp" title="首页" style="FONT-SIZE: 11pt; TEXT-DECORATION: none; FONT-WEIGHT: bold; COLOR: #ffffff; PADDING-LEFT: 2px; MARGIN-LEFT: 2px; LETTER-SPACING: 1px; LINE-HEIGHT: 32px; PADDING-RIGHT:2px; MARGIN-RIGHT: 2px;dispaly:block;height:34px;">首页</a>
-            <span style="color:#fff;font-size:14px;">|</span>
-        </TD></TR></TBODY></TABLE>
-<TABLE height="26" cellspacing="0" cellpadding="0" width="980" align="center" border="0">
-    <TBODY>
-    <TR>
-        <TD class="wz" style="text-align: left">
-            <table class="winstyle37708" cellspacing="0" cellpadding="0"><tr><td nowrap>当前位置：
-                <a href="index.jsp"><span class="fontstyle37708">首页</span></a><span class="splitflagstyle37708">>></span><a href="swzl.htm"><span class="fontstyle37708">失物招领</span></a></td></tr></table></TD></TR></TBODY></TABLE>
-<TABLE cellspacing="0" cellpadding="0" width="980" align="center" bgcolor="#ffffff" border="0">
-    <TBODY>
-    <TR>
-        <TD bgcolor="#e7f1fb" height="125" valign="top" width="220">
-            <DIV class="left">
-                <UL>
-                    <LI><style type="text/css">
-                        td.b1_4_{FONT-SIZE:9pt;}
-                        td.b2_4_{FONT-SIZE:9pt;}
-                        td.b3_4_{FONT-SIZE:9pt;BACKGROUND-COLOR: #eff8fe;}
-                        td.b4_4_{FONT-SIZE:9pt;BACKGROUND-COLOR: #e8f0fb;}
-                        a.menu0_4_:link {TEXT-DECORATION: none;};
-                        a.menu0_4_:visited { TEXT-DECORATION: none;};
-                        a.menu0_4_:hover {TEXT-DECORATION: none;};
-                        a.menu0_4_:active {TEXT-DECORATION: none;};
-                        table.tb1_4_{FONT-SIZE:9pt;border:0;}
-                        span.s1_4_{LINE-HEIGHT: 30px;COLOR: #ffffff;FONT-SIZE: 10pt;TEXT-DECORATION: none;}
-                        span.s2_4_{LINE-HEIGHT: 160%;COLOR: #ffffff;FONT-SIZE: 9pt;}
-                        span.s10_4_{LINE-HEIGHT: 30px;COLOR: #002b55;FONT-SIZE: 10pt;}
-                        span.s20_4_{LINE-HEIGHT: 160%;COLOR: #002b55;FONT-SIZE: 9pt;}
-                    </style>
-                        <SCRIPT language="javascript">
-                            var showfix_4_ = 1;
-                            var isvertical_4_ = true;
-                        </SCRIPT>
-                        <script language="javascript" src="/system/resource/js/menu/text.js"></script>
-                        <TABLE id="t1_4_" cellSpacing="0" cellPadding="0" border="0" height="0" width="0"><TR><TD valign="middle" height="0" width="0" class="b1_4_" align="left" id="a_4_1046" onmouseover="tshowLayers('1046','b2_4_', '_4_')" onmouseout="thideLayers('1046','b1_4_', '_4_','true')"> <a class="menu0_4_" href="swzl.htm"><span class="fontstyle37711">&nbsp;失物招领&nbsp;</span></a></TD></tr></table></A></LI></UL></DIV></TD>
-        <TD valign="top" width="764" colspan="5">
-            <TABLE cellspacing="0" cellpadding="0" width="764" align="center" border="0">
-                <TBODY>
-                <TR>
-                    <TD align="right"></TD></TR></TBODY></TABLE>
-            <TABLE height="47" cellspacing="0" cellpadding="0" width="733" align="center" border="0">
-                <TBODY>
-                <TR>
-                    <TD height="47" valign="middle" width="724">
-                        <P class="title"><STRONG><FONT size="3" face="Times New Roman"><span class="windowstyle37716">
-失物招领</span></FONT></STRONG></P></TD></TR></TBODY></TABLE>
-            <TABLE cellspacing="0" cellpadding="0" width="723" align="center" border="0">
-                <TBODY>
-                <TR>
-                    <TD>
+        </div>
+
+        <div class="vsb-space n_right" columns="3">
 
 
-                        <style>
-                            A.f125955:link{COLOR: #222222;}
-                            A.f125955:visited{COLOR: #222222;}
-                            A.f125955:active{COLOR: #222222;}
-                            A.f125955:hover{COLOR: #cc0000;}
-                        </style>
-                        <INPUT TYPE="hidden" NAME="actiontype" VALUE=""><input type="hidden" name="_scode_" value="1682007591551"><input type="hidden" name="urltype" value="tree.TreeTempUrl"><input type="hidden" name="wbtreeid" value="1046"><input type="hidden" name="outFlag" value="false">
-                        <style type="text/css">
-                            .headStyle10f5gsgmoj, .headStyle10f5gsgmoj td, .headStyle10f5gsgmoj div {font-size: 12px;font-family:宋体; color: #000000; margin-left: auto; margin-right: auto; line-height:14px;}
-                            .defaultButtonStyle {font-size: 12px;font-family:宋体; height:20px;color: #000000;BORDER: #AFD5F5 1px solid; margin: 0px;padding: 0px; FILTER:progid:DXImageTransform.Microsoft.Gradient(GradientType=0,StartColorStr=#ffffff, EndColorStr=#BDDBF7);  CURSOR: pointer; line-height:14px;background:-webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#BDDBF7));background: -moz-linear-gradient( top,#ffffff,#BDDBF7);background:-ms-linear-gradient(top,#ffffff 0%,#bddbf7 100%);}
-                            .defaultinputStyle {font-size: 12px;font-family:宋体; height:20px; border:1px solid #AFD5F5; line-height:14px;}
-                            .colHeader {font-size: 12px;font-family:宋体; line-height:14px;}
-                            .headStyle10f5gsgmoj a, .pageList .this-page {font-size: 12px;font-family:宋体; display:inline-block; height:14px; padding: 2px 4px; border: solid 1px #AFD5F5; background: #fff; text-decoration: none; MARGIN-RIGHT: 1px;line-height:14px;}
-                            .headStyle10f5gsgmoj a:visited {font-size: 12px;font-family:宋体; color: #000000; text-decoration: none; line-height:14px;}
-                            .headStyle10f5gsgmoj .PrevDisabled {font-size: 12px;font-family:宋体; display:inline-block;height:14px;  margin-right: 3px; padding: 2px 4px; background: #fff;color:#ccc;border: solid 1px #AFD5F5; line-height:14px;}
-                            .headStyle10f5gsgmoj .SelectList {font-size: 12px;font-family:宋体;line-height:14px;}
-                            .headStyle10f5gsgmoj .Prev { font-size: 12px;font-family:宋体; margin-right: 3px; padding: 2px 4px;line-height:14px;}
-                            .headStyle10f5gsgmoj .break {font-size: 12px;font-family:宋体; border: none; text-decoration: none; line-height:14px;}
-                            .headStyle10f5gsgmoj .NextDisabled { font-size: 12px;font-family:宋体;display:inline-block; height:14px; margin-left: 2px; padding: 2px 4px;background: #fff;color:#ccc;border: solid 1px #AFD5F5; line-height:14px;}
-                            .headStyle10f5gsgmoj .Next { font-size: 12px;font-family:宋体; margin-left: 2px; padding: 2px 4px;line-height:14px;}
-                            .headStyle10f5gsgmoj .this-page {font-size: 12px;font-family:宋体;display:inline-block;height:14px;padding: 2px 4px; border: solid 1px #AFD5F5; background: #E1F0FD; font-weight: bold; color:black; MARGIN-RIGHT: 1px;line-height:14px;}
-                            .headStyle10f5gsgmoj a:hover {font-size: 12px;font-family:宋体;color: black; background: #EFF7FE; border-color: #AFD5F5; text-decoration: none;line-height:14px;}
-                            .headStyle10f5gsgmoj a:link {font-size: 12px;font-family:宋体;color: #000000; text-decoration: none;line-height:14px;}
-                            .headStyle10f5gsgmoj a:active { font-size: 12px;font-family:宋体;color: black; text-decoration: none; background: #EFF7FE; line-height:14px;}
-                        </style><script language="javascript" src="/system/resource/js/gotopage.js"></script><script type="text/javascript">function a125955_gopage_fun(){_simple_list_gotopage_fun(1,'a125955GOPAGE',2)}</script>
-                        <table width="100%" class="winstyle125955">
+            <script language="javascript" src="/system/resource/js/dynclicks.js"></script><script language="javascript" src="/system/resource/js/ajax.js"></script><ul class="list">
+            <li class="cleafix" id="line_u3_0">
+                <div class="list_time fl">
+                    <p class="day">3</p>
+                    <p class="month">Jan</p>
+                </div>
+                <div class="list_wen fr">
+                    <a href="info/1095/1130.htm" class="tit">黑色钱宝一个，内有现金若干</a>
+                    <p>黑色钱宝一个，内有现金若干[<a href="info/1095/1130.htm">详细</a>]</p>
+                </div>
+            </li>
 
-                            <tr height="22">
-                                <td width="1" nowrap><span class="leaderfont125955">· </span></td>
-                                <td width="100%" style="font-size:9pt">
+            <li class="cleafix" id="line_u3_1">
+                <div class="list_time fl">
+                    <p class="day">3</p>
+                    <p class="month">Jan</p>
+                </div>
+                <div class="list_wen fr">
+                    <a href="info/1095/1129.htm" class="tit">黑色钱宝一个，内有现金若干</a>
+                    <p>黑色钱宝一个，内有现金若干[<a href="info/1095/1129.htm">详细</a>]</p>
+                </div>
+            </li>
+
+             <li class="cleafix" id="line_u3_2">
+                <div class="list_time fl">
+                    <p class="day">3</p>
+                    <p class="month">Jan</p>
+                </div>
+                <div class="list_wen fr">
+                    <a href="info/1095/1107.htm" class="tit">黑色钱宝一个，内有现金若干</a>
+                    <p>黑色钱宝一个，内有现金若干[<a href="info/1095/1107.htm">详细</a>]</p>
+                </div>
+            </li>
+
+            <li class="cleafix" id="line_u3_3">
+                <div class="list_time fl">
+                    <p class="day">3</p>
+                    <p class="month">Jan</p>
+                </div>
+                <div class="list_wen fr">
+                    <a href="info/1095/1106.htm" class="tit">黑色钱宝一个，内有现金若干</a>
+                    <p>黑色钱宝一个，内有现金若干[<a href="info/1095/1106.htm">详细</a>]</p>
+                </div>
+            </li>
+
+            <li class="cleafix" id="line_u3_4">
+                <div class="list_time fl">
+                    <p class="day">3</p>
+                    <p class="month">Jan</p>
+                </div>
+                <div class="list_wen fr">
+                    <a href="info/1095/1132.htm" class="tit">u盘一个</a>
+                    <p>4G u盘一个，如图[<a href="info/1095/1132.htm">详细</a>]</p>
+                </div>
+            </li>
+
+            <li class="cleafix" id="line_u3_5">
+                <div class="list_time fl">
+                    <p class="day">3</p>
+                    <p class="month">Jan</p>
+                </div>
+                <div class="list_wen fr">
+                    <a href="info/1095/1131.htm" class="tit">u盘一个</a>
+                    <p>4G u盘一个，如图[<a href="info/1095/1131.htm">详细</a>]</p>
+                </div>
+            </li>
+
+            <li class="cleafix" id="line_u3_6">
+                <div class="list_time fl">
+                    <p class="day">3</p>
+                    <p class="month">Jan</p>
+                </div>
+                <div class="list_wen fr">
+                    <a href="info/1095/1108.htm" class="tit">u盘一个</a>
+                    <p>4G u盘一个，如图[<a href="info/1095/1108.htm">详细</a>]</p>
+                </div>
+            </li>
+
+            <li class="cleafix" id="line_u3_7">
+                <div class="list_time fl">
+                    <p class="day">3</p>
+                    <p class="month">Jan</p>
+                </div>
+                <div class="list_wen fr">
+                    <a href="info/1095/1105.htm" class="tit">u盘一个</a>
+                    <p>4G u盘一个，如图[<a href="info/1095/1105.htm">详细</a>]</p>
+                </div>
+            </li>
+
+            <li class="cleafix" id="line_u3_8">
+                <div class="list_time fl">
+                    <p class="day">28</p>
+                    <p class="month">Dec</p>
+                </div>
+                <div class="list_wen fr">
+                    <a href="info/1095/1134.htm" class="tit">一只猫</a>
+                    <p>小奶猫一只[<a href="info/1095/1134.htm">详细</a>]</p>
+                </div>
+            </li>
+
+            <li class="cleafix" id="line_u3_9">
+                <div class="list_time fl">
+                    <p class="day">28</p>
+                    <p class="month">Dec</p>
+                </div>
+                <div class="list_wen fr">
+                    <a href="info/1095/1133.htm" class="tit">一只猫</a>
+                    <p>小奶猫一只[<a href="info/1095/1133.htm">详细</a>]</p>
+                </div>
+            </li>
+
+        </UL>
+            <div align="center"><INPUT TYPE="hidden" NAME="actiontype" VALUE=""><input type="hidden" name="_scode_" value="1578463634193"><input type="hidden" name="urltype" value="tree.TreeTempUrl"><input type="hidden" name="wbtreeid" value="1095"><input type="hidden" name="outFlag" value="false">
+                <style type="text/css">
+                    .headStyle1zdroyzz61, .headStyle1zdroyzz61 td, .headStyle1zdroyzz61 div {font-size: 12px;font-family:宋体; color: #000000; margin-left: auto; margin-right: auto; line-height:14px;}
+                    .defaultButtonStyle {font-size: 12px;font-family:宋体; height:20px;color: #000000;BORDER: #AFD5F5 1px solid; margin: 0px;padding: 0px; FILTER:progid:DXImageTransform.Microsoft.Gradient(GradientType=0,StartColorStr=#ffffff, EndColorStr=#BDDBF7);  CURSOR: pointer; line-height:14px;background:-webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#BDDBF7));background: -moz-linear-gradient( top,#ffffff,#BDDBF7);background:-ms-linear-gradient(top,#ffffff 0%,#bddbf7 100%);}
+                    .defaultinputStyle {font-size: 12px;font-family:宋体; height:20px; border:1px solid #AFD5F5; line-height:14px;}
+                    .colHeader {font-size: 12px;font-family:宋体; line-height:14px;}
+                    .headStyle1zdroyzz61 a, .pageList .this-page {font-size: 12px;font-family:宋体; display:inline-block; height:14px; padding: 2px 4px; border: solid 1px #AFD5F5; background: #fff; text-decoration: none; MARGIN-RIGHT: 1px;line-height:14px;}
+                    .headStyle1zdroyzz61 a:visited {font-size: 12px;font-family:宋体; color: #000000; text-decoration: none; line-height:14px;}
+                    .headStyle1zdroyzz61 .PrevDisabled {font-size: 12px;font-family:宋体; display:inline-block;height:14px;  margin-right: 3px; padding: 2px 4px; background: #fff;color:#ccc;border: solid 1px #AFD5F5; line-height:14px;}
+                    .headStyle1zdroyzz61 .SelectList {font-size: 12px;font-family:宋体;line-height:14px;}
+                    .headStyle1zdroyzz61 .Prev { font-size: 12px;font-family:宋体; margin-right: 3px; padding: 2px 4px;line-height:14px;}
+                    .headStyle1zdroyzz61 .break {font-size: 12px;font-family:宋体; border: none; text-decoration: none; line-height:14px;}
+                    .headStyle1zdroyzz61 .NextDisabled { font-size: 12px;font-family:宋体;display:inline-block; height:14px; margin-left: 2px; padding: 2px 4px;background: #fff;color:#ccc;border: solid 1px #AFD5F5; line-height:14px;}
+                    .headStyle1zdroyzz61 .Next { font-size: 12px;font-family:宋体; margin-left: 2px; padding: 2px 4px;line-height:14px;}
+                    .headStyle1zdroyzz61 .this-page {font-size: 12px;font-family:宋体;display:inline-block;height:14px;padding: 2px 4px; border: solid 1px #AFD5F5; background: #E1F0FD; font-weight: bold; color:black; MARGIN-RIGHT: 1px;line-height:14px;}
+                    .headStyle1zdroyzz61 a:hover {font-size: 12px;font-family:宋体;color: black; background: #EFF7FE; border-color: #AFD5F5; text-decoration: none;line-height:14px;}
+                    .headStyle1zdroyzz61 a:link {font-size: 12px;font-family:宋体;color: #000000; text-decoration: none;line-height:14px;}
+                    .headStyle1zdroyzz61 a:active { font-size: 12px;font-family:宋体;color: black; text-decoration: none; background: #EFF7FE; line-height:14px;}
+                </style><script language="javascript" src="/system/resource/js/gotopage.js"></script><script type="text/javascript">function a202459_gopage_fun(){_simple_list_gotopage_fun(2,'a202459GOPAGE',2)}</script><table cellspacing="0" cellpadding="0" border="0"><TR><td colspan="0"><table cellspacing="0" class="headStyle1zdroyzz61" width="100%" cellpadding="1"><tr valign="middle"><TD nowrap align="left" width="1%" id="fanye202459">共12条&nbsp;&nbsp;1/2&nbsp;</td><td nowrap align="left"><div><span class="PrevDisabled">首页</span><span class="PrevDisabled">上页</span><a href="swzl/1.htm" class="Next">下页</a><a href="swzl/1.htm" class="Next">尾页</a>&nbsp;&nbsp;<input align="absmiddle" type="button" class="defaultButtonStyle" id="gotopagebut" name="a202459Find" value="转到" onclick="javascript:a202459_gopage_fun()"><INPUT size="2" align="absmiddle" class="defaultInputStyle" NAME="a202459GOPAGE" id="a202459GOPAGE" VALUE="" style="margin-left:1px;margin-right:1px">页</div></td></tr></table></table></div><script>_showDynClickBatch(['dynclicks_u3_1130','dynclicks_u3_1129','dynclicks_u3_1107','dynclicks_u3_1106','dynclicks_u3_1132','dynclicks_u3_1131','dynclicks_u3_1108','dynclicks_u3_1105','dynclicks_u3_1134','dynclicks_u3_1133'],[1130,1129,1107,1106,1132,1131,1108,1105,1134,1133],"wbnews", 1515140842)</script>
+
+        </div>
+    </div>
+
+</div>
 
 
-                                    <a class="c125955" href="info/1046/1618.htm" target="_blank" title="招领信息-本校区崇文楼拾取到手表一块，品牌：ROSSINI罗西尼（金色表框、黑色腕带）">招领信息-本校区崇文楼拾取到手表一块，品牌：ROSSINI罗西尼（金色表框、黑色腕带）
-                                    </a>
 
+<!--footer-->
+<div class="footerWrap">
+    <!--footTwo-->
+    <div class="footTwo">
+        <div class="foot cleafix">
 
-                                </td>
-                                <td width="1%" nowrap><span class="timestyle125955">2023/03/31&nbsp;</span></td>
-                                <td width="1%" nowrap></td>
-                            </tr>
-
-
-
-                            <tr><td colspan="3" align="center">
-                                <table cellpadding="0" cellspacing="0" border="0">
-                                    <TR><td colspan="0"><table cellspacing="0" class="headStyle10f5gsgmoj" width="100%" cellpadding="1"><tr valign="middle"><TD nowrap align="left" width="1%" id="fanye125955">共1条&nbsp;&nbsp;1/1&nbsp;</td><td nowrap align="left"><div><span class="PrevDisabled">首页</span><span class="PrevDisabled">上页</span><span class="NextDisabled">下页</span><span class="NextDisabled">尾页</span></div></td></tr></table>
-                                </table>
-                            </td></tr>
-                        </table>                       </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
-<TABLE cellspacing="0" cellpadding="0" width="980" align="center" border="0">
-    <TBODY>
-    <TR>
-        <TD height="73" background="images/bqbj.jpg" align="center"><p>汉江师范学院-保卫处 &nbsp; &nbsp;电话:8583314 Copyright 2023 bw.xju. All Rights Reserved</p></TD></TR></TBODY></TABLE>
-</script>
+            <div class="fttwo_r fl"></div>
+        </div>
+    </div>
+    <!--footThree-->
+    <div class="footThree"><!-- 版权内容请在本组件"内容配置-版权"处填写 -->
+        <p>南京市浦口区浦珠南路30号 南京工业大学团委</p><p>Copyright©2019&nbsp; 版权所有</p></div>
+</div>
+</body>
+<script src="js/jQuery-3.7.0.js"></script>
 </html>

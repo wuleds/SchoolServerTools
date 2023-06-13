@@ -69,5 +69,33 @@
         </ul>
     </div>
 </div>
+<script>
+// 给点击按钮注册点击事件
+let submit = document.querySelector('.submit');//获取到提交按钮
+submit.onclick = function () {
+// 1. 获取到编辑框内容
+let edits = document.querySelectorAll('.edit');
+let from = edits[0].value;
+let to = edits[1].value;
+let message = edits[2].value;
+console.log(from + "," + to + "," + message);
+//对用户输入的内容做一个检查，确保是合法的提交
+if (from == '' || to == '' || message == '') {
+return;
+}
+// 2. 构造 html 元素
+let row = document.createElement('div');
+row.className = 'row';
+row.innerHTML = from + '对' + to + '说: ' + message;
+// 3. 把构造好的元素添加到DOM树中
+let container = document.querySelector('.container');
+container.appendChild(row);
+// 4. 同时清理之前输入框的内容
+for (let i = 0; i < 3; i++) {
+edits[i].value = '';
+}
+}
+</script>
+<script src="js/jQuery-3.7.0.js"></script>
 </body>
 </html>
