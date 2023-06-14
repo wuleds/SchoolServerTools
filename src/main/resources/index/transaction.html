@@ -1,10 +1,92 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>校园二手交易平台</title>
 </head>
 <body>
+<header class="navbar">
+    <form class="nav-search">
+        <a href="index.html"><img class="logo" src="img/logo2.png"></a>
+        <div class="search-form">
+            <a href="#" class="search-logo">| &nbsp;<img src="img/search.png"></a>
+            <input type="search" class="searchIn" placeholder="搜图书...">
+            <button class="searchBtn">搜索</button>
+        </div>
+    </form><!--  nav-search -->
+    <ul class="menu">
+        <li><a class="active" href="index.html">首页</a></li>
+        <li><a href="bookStore.html">书籍良品</a></li>
+        <li><a href="myBook.html">我的书架页</a></li>
 
+    </ul>
+</header>
+
+<!-- 轮播 -->
+<div class="carousel">
+    <div class="book-guide">
+        <h4>图书导航</h4>
+        <ul class="book-class">
+            <li><a href="article.html" title="article">小说 / 文学 / 语言文字</a></li>
+            <li><a href="jiaocai.html">教材 / 教辅 / 考试</a></li>
+            <li><a href="technology.html" title="technology">工程技术 / 互联网</a></li>
+        </ul>
+    </div><!-- book-guide -->
+    <div class="slider">
+        <div class="slider-img">
+            <ul class="slider-img-ul">
+                <li><img src="/static/image/4.jpg"></li>
+                <li><img src="/static/image/5.jpg"></li>
+            </ul>
+        </div>
+    </div><!-- 	slider -->
+</div><!-- carousel -->
+
+<!-- 图书分类 -->
+<div id="container">
+    <div class="book-part" id="article">
+        <h3 class="book-title"><a href="#">| 小说 / 文学 / 语言文字</a></h3>
+        <a class="more" href="#"> > > 更多</a>
+        <ul class="book-lists">
+            <li class="book-list">
+                <a href="bookDetail.html" class="book-pic">
+                    <img src="/static/image/baiyexing.jpg">
+                </a>
+                <a href="bookDetail.html" class="book-info">
+                    <h5 class="book-name">白夜行</h5>
+                    <span class="book-detail">东野圭吾 著 / 南海出版公司 / 2008-09 / 平装</span>
+                </a>
+                <span class="book-price">￥12.9
+						<a href="#" class="book-buy">立即下单</a>
+					</span>
+            </li>
+
+            <li class="book-list">
+                <a href="bookDetail.html" class="book-pic">
+                    <img src="/static/image/jianai.jpg">
+                </a>
+                <a href="bookDetail.html" class="book-info">
+                    <h5 class="book-name">简爱</h5>
+                    <span class="book-detail">夏洛特·勃朗特 著 / 世界图书出版公司 / 2011-10 / 平装</span>
+                </a>
+                <span class="book-price">￥13.8
+						<a href="#" class="book-buy">立即下单</a>
+					</span>
+            </li>
+
+            <li class="book-list">
+                <a href="bookDetail.html" class="book-pic">
+                    <img src="/static/image/xiaowu.jpg">
+                </a>
+                <a href="bookDetail.html" class="book-info">
+                    <h5 class="book-name">芒果街上的小屋</h5>
+                    <span class="book-detail">桑德拉·希斯内罗丝、潘帕 著 / 译林出版社 / 2006-06 / 平装</span>
+                </a>
+                <span class="book-price">￥10.8
+						<a href="#" class="book-buy">立即下单</a>
+					</span>
+            </li>
+<script src="js/jQuery-3.7.0.js"></script>
 </body>
 </html>
