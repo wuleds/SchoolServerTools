@@ -4,98 +4,89 @@
 <head>
     <meta charset="UTF-8">
     <title>校园二手交易平台</title>
-    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/css/index.css">
 </head>
 <body>
-<nav class="navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="#">校园二手交易平台</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse " id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item">
+<header class="navbar">
+    <form class="nav-search">
+        <a href="index.html"><img class="logo" src="img/logo2.png"></a>
+        <div class="search-form">
+            <a href="#" class="search-logo">| &nbsp;<img src="img/search.png"></a>
+            <input type="search" class="searchIn" placeholder="搜图书...">
+            <button class="searchBtn">搜索</button>
+        </div>
+    </form><!--  nav-search -->
+    <ul class="menu">
+        <li><a class="active" href="index.html">首页</a></li>
+        <li><a href="bookStore.html">书籍良品</a></li>
+        <li><a href="myBook.html">我的书架页</a></li>
 
-                    <navbar onclick="window.location.href ='navigate.html'">二手产品</navbar>
-                </li>
-                <li class="nav-item">
-                    <navbar onclick="window.location.href ='schooolemploy.html'">产品价格</navbar>
-                </li>
-                <li class="nav-item">
-                    <button onclick="nav-link " >卖方信息</button>
-                </li>
-                <li class="nav-item">
-                    <button onclick="nav-link " >产品信息 </button>
-                </li>
-                <li class="nav-item">
-                    <button onclick="nav-link " >我的</button>
-                </li>
+    </ul>
+</header>
+
+<!-- 轮播 -->
+<div class="carousel">
+    <div class="book-guide">
+        <h4>图书导航</h4>
+        <ul class="book-class">
+            <li><a href="article.html" title="article">小说 / 文学 / 语言文字</a></li>
+            <li><a href="jiaocai.html">教材 / 教辅 / 考试</a></li>
+            <li><a href="technology.html" title="technology">工程技术 / 互联网</a></li>
+        </ul>
+    </div><!-- book-guide -->
+    <div class="slider">
+        <div class="slider-img">
+            <ul class="slider-img-ul">
+                <li><img src="/static/image/4.jpg"></li>
+                <li><img src="/static/image/5.jpg"></li>
             </ul>
         </div>
-    </div>
-</nav>
-<div class="container my-5">
-    <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="搜索" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">搜索</button>
-    </form>
-    <h1>欢迎使用校园二手交易平台</h1>
-    <button class="btn btn-primary">点击这里返回首页</button>
-</div>
-<script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.0.1/js/bootstrap.min.js"></script>
-<script src="/js/index.js"></script>
+    </div><!-- 	slider -->
+</div><!-- carousel -->
 
-<div class="chanpin">
-    <div class="yy-title"><a href="transaction.html"><h1>产品信息</h1></a></div>
-    <div class="ms">
-        <ul>
-            <a href="#">
-                <li><img src="/static/image/1.jpg" />
-                    <p style="text-align: center" >电视机</p>
-                </li>
-            </a>
-            <a href="#">
-                <li><img src="/static/image/2.jpg" />
-                    <p style="text-align: center" >电磁炉</p>
+<!-- 图书分类 -->
+<div id="container">
+    <div class="book-part" id="article">
+        <h3 class="book-title"><a href="#">| 小说 / 文学 / 语言文字</a></h3>
+        <a class="more" href="#"> > > 更多</a>
+        <ul class="book-lists">
+            <li class="book-list">
+                <a href="bookDetail.html" class="book-pic">
+                    <img src="/static/image/baiyexing.jpg">
+                </a>
+                <a href="bookDetail.html" class="book-info">
+                    <h5 class="book-name">白夜行</h5>
+                    <span class="book-detail">东野圭吾 著 / 南海出版公司 / 2008-09 / 平装</span>
+                </a>
+                <span class="book-price">￥12.9
+						<a href="#" class="book-buy">立即下单</a>
+					</span>
+            </li>
 
-                </li>
-            </a>
-            <a href="#">
-                <li><img src="/static/image/3.jpg" />
-                    <p style="text-align: center" >吹风机</p>
-                </li>
-        </ul>
-    </div>
-</div>
-<script>
-// 给点击按钮注册点击事件
-let submit = document.querySelector('.submit');//获取到提交按钮
-submit.onclick = function () {
-// 1. 获取到编辑框内容
-let edits = document.querySelectorAll('.edit');
-let from = edits[0].value;
-let to = edits[1].value;
-let message = edits[2].value;
-console.log(from + "," + to + "," + message);
-//对用户输入的内容做一个检查，确保是合法的提交
-if (from == '' || to == '' || message == '') {
-return;
-}
-// 2. 构造 html 元素
-let row = document.createElement('div');
-row.className = 'row';
-row.innerHTML = from + '对' + to + '说: ' + message;
-// 3. 把构造好的元素添加到DOM树中
-let container = document.querySelector('.container');
-container.appendChild(row);
-// 4. 同时清理之前输入框的内容
-for (let i = 0; i < 3; i++) {
-edits[i].value = '';
-}
-}
-</script>
+            <li class="book-list">
+                <a href="bookDetail.html" class="book-pic">
+                    <img src="/static/image/jianai.jpg">
+                </a>
+                <a href="bookDetail.html" class="book-info">
+                    <h5 class="book-name">简爱</h5>
+                    <span class="book-detail">夏洛特·勃朗特 著 / 世界图书出版公司 / 2011-10 / 平装</span>
+                </a>
+                <span class="book-price">￥13.8
+						<a href="#" class="book-buy">立即下单</a>
+					</span>
+            </li>
+
+            <li class="book-list">
+                <a href="bookDetail.html" class="book-pic">
+                    <img src="/static/image/xiaowu.jpg">
+                </a>
+                <a href="bookDetail.html" class="book-info">
+                    <h5 class="book-name">芒果街上的小屋</h5>
+                    <span class="book-detail">桑德拉·希斯内罗丝、潘帕 著 / 译林出版社 / 2006-06 / 平装</span>
+                </a>
+                <span class="book-price">￥10.8
+						<a href="#" class="book-buy">立即下单</a>
+					</span>
+            </li>
 <script src="js/jQuery-3.7.0.js"></script>
 </body>
 </html>
