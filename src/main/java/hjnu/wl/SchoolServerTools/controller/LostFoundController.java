@@ -10,6 +10,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.util.ArrayList;
+
 @CrossOrigin
 @Controller
 @RequestMapping("/lostFound")
@@ -50,8 +52,9 @@ public class LostFoundController
      */
     @RequestMapping("/getAll")
     @ResponseBody
-    public PostNum getAllLostFound()
+    public ArrayList<LostFound> getAllLostFound()
     {
+        System.out.println("getAllLostFound");
         return lostFoundService.getAllLostFound();
     }
 

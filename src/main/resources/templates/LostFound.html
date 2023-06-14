@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>失物招领</title>
+  <script src="/js/jQuery-3.7.0.js"></script>
+  <script src="/js/lostFound.js"></script>
+
+  <script src="/static/js/jQuery-3.7.0.js"></script>
+  <script src="/static/js/lostFound.js"></script>
+</head>
+<body>
+<div style="text-align: center">
+<h1>失物招领</h1>
+<form id="postForm">
+  <h2>发布失物招领</h2>
+  <label for="title">物品名字：</label>
+  <input type="text" id="title" name="thingName" required><br>
+  <input type="text" hidden="hidden" id="userId" name="userId" value="">
+  <label for="phoneNumber">电话：</label>
+  <input type="text" id="phoneNumber" name="phoneNumber" required><br>
+  <label for="description">描述:</label>
+  <textarea id="description" name="thingDescribe" required></textarea><br>
+  <label for="image">图片:</label>
+  <input type="file" id="image" name="file" accept="image/*" required><br>
+  <input type="submit" value="发布">
+</form>
+</div>
+<div id="lostFounds" style="text-align: center">
+  <!-- 这里将展示失物招领的帖子 -->
+</div>
+
+</body>
+</html>

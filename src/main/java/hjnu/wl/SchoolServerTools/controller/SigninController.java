@@ -41,7 +41,7 @@ public class SigninController
         if("SigninSuccess".equals(result))
         {
             Cookie cookie = new Cookie("edu.hjnu.wl-userId",userId);
-            cookie.setValue(Md5Util.getMd5(userPassword));
+            cookie.setValue(userId);
             cookie.setMaxAge(60*60*24*7);
             RequestAndResponse.getResponse().addCookie(cookie);
             System.out.println("用户登录成功:"+userId+",pwd:"+userPassword);

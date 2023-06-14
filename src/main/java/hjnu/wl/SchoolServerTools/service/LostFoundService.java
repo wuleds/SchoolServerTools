@@ -45,12 +45,12 @@ public class LostFoundService
     }
 
     /**查询所有失物招领**/
-    public PostNum  getAllLostFound()
+    public ArrayList<LostFound>  getAllLostFound()
     {
         ArrayList<LostFound> list = lostFoundDao.getAllLostFound();
         String json = JSON.toJSONString(list);
         PostNum postNum = new PostNum(list.size(),json);
-        return postNum;
+        return list;
     }
 
     /**分页查询**/
