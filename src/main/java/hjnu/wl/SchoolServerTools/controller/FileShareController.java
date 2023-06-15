@@ -10,6 +10,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.util.ArrayList;
+
 @CrossOrigin
 @Controller
 @RequestMapping("/fileShare")
@@ -48,7 +50,7 @@ public class FileShareController
      */
     @RequestMapping("/getAll")
     @ResponseBody
-    public PostNum getAllFileShare()
+    public ArrayList<FileShare> getAllFileShare()
     {
         return fileShareService.getAllFileShare();
     }

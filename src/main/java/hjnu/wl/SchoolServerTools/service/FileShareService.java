@@ -84,12 +84,10 @@ public class FileShareService
      * 获取所有资源分享
      * 测试通过
      */
-    public PostNum getAllFileShare()
+    public ArrayList<FileShare> getAllFileShare()
     {
         ArrayList<FileShare> list = fileShareDao.getAllFileShare();
-        String json = JSON.toJSONString(list);
-        PostNum postNum = new PostNum(list.size(),json);
-        return postNum;
+        return list;
     }
 
     /**

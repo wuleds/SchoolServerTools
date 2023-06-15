@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>资源分享</title>
+  <script src="/js/jQuery-3.7.0.js"></script>
+  <script src="/js/FIleShare.js"></script>
+
+  <script src="/static/js/jQuery-3.7.0.js"></script>
+  <script src="/static/js/FIleShare.js"></script>
+</head>
+<body>
+<div style="text-align: center">
+  <h1>资源分享</h1>
+
+  <form id="postForm">
+    <h2>发布资源</h2>
+    <input type="text" hidden="hidden" id="sharerId" name="sharerId" value="">
+    <label for="notices">资源描述:</label>
+    <textarea id="notices" name="notices" style="margin-top: 10px" required></textarea><br><br>
+    <label for="file">文件:</label>
+    <input type="file" id="file" name="file" required><br><br>
+    <input type="submit" value="发布资源" style="width: 150px;height: 30px">
+  </form>
+</div>
+<div id="fileShareDiv" style="text-align: center">
+  <!-- 这里将展示失物招领的帖子 -->
+</div>
+
+</body>
+</html>

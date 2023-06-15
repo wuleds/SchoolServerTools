@@ -22,7 +22,7 @@ public class DownloadFileController
     public void downloadImg (@PathVariable String imageName, HttpServletResponse response)
     {
         //windows
-        String path = "D:\\MyProgramProjects\\SchoolServerTools\\src\\main\\resources\\teststatic\\file";
+        String path = "D:\\MyProgramProjects\\SchoolServerTools\\src\\main\\resources\\static\\file";
 
         //linux
         //String path = "/home/wule/file";
