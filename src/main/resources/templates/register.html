@@ -98,7 +98,7 @@
 
 <body>
     <div id="loginDiv">
-           <form action="http://wule.space/register/user">
+           <form action="http://localhost/register/user" method="post">
                <h1>REGESTER</h1>
               <p>账号:<input name="userId" type="text" autofocus required><label id="id_trip"></label></p>
                <p>
@@ -110,12 +110,11 @@
 
 
 
-               <div class="sexDiv">
-                   性别:
-                   <input class="userSex" name="userSex" value="男" type="radio">男
-                   <input class="userSex" name="userSex" value="女" type="radio">女
-                   <label id="sex_trip"></label>
-               </div>
+               <br>
+               <select name="userSex" id="userSex">
+                   <option value="男">男</option>
+                   <option value="女">女</option>
+               </select>
 
 
 

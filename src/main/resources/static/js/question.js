@@ -8,7 +8,7 @@ $(document).ready(function() {
         postLostItem();
     });
 });
-
+let id;
 function fetchLostItems() {
     $.ajax({
         url: "http://localhost/question/getAll",
@@ -36,21 +36,21 @@ function displayLostItems(msg)
             " <div class=\"card-body\">\n" +
             "<h5 class=\"card-title\">"+arr[i].question+"</h5>\n" +
             "<h5 class=\"card-title\">"+arr[i].questionId+"</h5>\n" +
-            "<p class=\"card-text\">"+arr[i].quizzerId+"</p>\n" +
-            "<p class=\"card-text\">id：:"+arr[i].notices+"</p>\n" +
+            "<p class=\"card-text\">提问者:"+arr[i].quizzerId+"</p>\n" +
+            "<p class=\"card-text\">描述:"+arr[i].notices+"</p>\n" +
             "提问时间："+arr[i].releaseTime;
         if(arr[i].answer!=null)
         {
-            temp += "<p class=\"card-text\">"+arr[i].answer+"</p>\n" +
-                "<p class=\"card-text\">id：:"+arr[i].answererId+"</p>\n" +
+            temp += "<p class=\"card-text\">回答："+arr[i].answer+"</p>\n" +
+                "<p class=\"card-text\">回答者:"+arr[i].answererId+"</p>\n" +
                 "</div>" +
                 "回答时间："+arr[i].answerTime+
                 "</div>";
         }else{
-            let id = arr[i].questionId;
+            id = arr[i].questionId;
             temp += "<p class=\"card-text\">暂无回答</p>\n" +
                 "<textarea id='answer' name='answer'></textarea>"+
-                "<input type='button' value='回答' onclick='answer(id,\"123456\")'>"+
+                "<input type='button' value='回答' onclick='answer()'>"+
                 "</div>"+
                 "</div>";
         }
@@ -58,15 +58,15 @@ function displayLostItems(msg)
     userData.append(temp);
 }
 
-function answer(a,b){
+function answer(){
     let answer = $("#answer").val();
     $.ajax({
         url: "http://localhost/question/answer",
         method: "POST",
         data: {
             answer:answer,
-            answererId:b,
-            questionId:a
+            answererId:"123456",
+            questionId:id
         },
         success: function(response) {
             // 处理成功响应，将帖子展示在页面上
