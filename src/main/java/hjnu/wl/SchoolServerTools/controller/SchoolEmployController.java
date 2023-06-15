@@ -10,6 +10,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.util.ArrayList;
+
 /**校园招聘**/
 @CrossOrigin
 @Controller
@@ -24,6 +26,8 @@ public class SchoolEmployController
     }
 
     /**发布学校招聘信息**/
+    @RequestMapping("/release")
+    @ResponseBody
     public String releaseSchoolEmploy(@RequestParam("file") MultipartFile file, @ModelAttribute SchoolEmploy schoolEmploy)
     {
         String hrName = schoolEmploy.getHrName();                 //hr的名字
@@ -46,7 +50,7 @@ public class SchoolEmployController
     /**获取所有招聘**/
     @RequestMapping("/getAll")
     @ResponseBody
-    public PostNum getAllEmploy()
+    public ArrayList<SchoolEmploy> getAllEmploy()
     {
         return schoolEmployService.getAllSchoolEmploy();
     }

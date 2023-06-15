@@ -25,15 +25,6 @@ public class TransactionService
         TransactionService.transactionsDao = transactionsDao;
     }
 
-    /**发布二手货信息
-     * @return
-     * "phoneNumberLengthError" 手机号长度错误
-     * "goodsNameLengthError" 商品名长度错误
-     * "goodsPriceLengthError" 商品价格长度错误
-     * "goodsDescribeLengthError" 商品描述长度错误
-     * "ReleaseTransactionSuccess" 发布二手货成功
-     * "ReleaseTransactionFail" 发布二手货失败
-     * 测试通过*/
     public String releaseTransaction(String sellerId,String phoneNumber,String goodsName,String goodsImageMd5,String goodsPrice,String goodsDescribe)
     {
         try{
@@ -57,12 +48,9 @@ public class TransactionService
 
     /**查询所有二手货信息
      * 测试通过*/
-    public PostNum getAllTransactions()
+    public ArrayList<Transaction> getAllTransactions()
     {
-        ArrayList<Transaction> list = transactionsDao.getAllTransactions();
-        String json = JSON.toJSONString(list);
-        PostNum postNum = new PostNum(list.size(), json);
-        return postNum;
+        return transactionsDao.getAllTransactions();
     }
 
     /**分页查询二手货**/

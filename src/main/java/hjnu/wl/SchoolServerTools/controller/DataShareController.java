@@ -7,11 +7,10 @@ import hjnu.wl.SchoolServerTools.service.DataShareService;
 import hjnu.wl.SchoolServerTools.util.FileSave;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+
+import java.util.ArrayList;
 
 /**信息分享**/
 @CrossOrigin
@@ -28,6 +27,7 @@ public class DataShareController
 
     /**发布信息分享**/
     @RequestMapping("/release")
+    @ResponseBody
     public String publishDataShare(@RequestParam("file") MultipartFile file, @ModelAttribute DataShare dataShare)
     {
         String sharerId = dataShare.getSharerId();                     //信息分享者的id
@@ -45,7 +45,8 @@ public class DataShareController
 
     /**获取所有的信息分享**/
     @RequestMapping("/getAll")
-    public String getAllDataShare()
+    @ResponseBody
+    public ArrayList<DataShare> getAllDataShare()
     {
         return dataShareService.getAllDataShare();
     }

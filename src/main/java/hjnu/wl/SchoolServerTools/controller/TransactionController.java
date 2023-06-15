@@ -10,6 +10,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.util.ArrayList;
+
 /**二手货**/
 @CrossOrigin
 @Controller
@@ -49,7 +51,7 @@ public class TransactionController
     /**查询所有二手货信息**/
     @RequestMapping("/getAll")
     @ResponseBody
-    public PostNum getAllTransactions()
+    public ArrayList<Transaction> getAllTransactions()
     {
         return transactionService.getAllTransactions();
     }

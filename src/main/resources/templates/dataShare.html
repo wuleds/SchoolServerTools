@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>信息分享</title>
+  <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css">
+  <script src="/static/js/jQuery-3.7.0.js"></script>
+  <script src="/static/js/dataShare.js"></script>
+
+  <script src="/js/jQuery-3.7.0.js"></script>
+  <script src="/js/dataShare.js"></script>
+</head>
+<body>
+
+<nav class="navbar-expand-md navbar-light bg-light">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bavbar" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <button onclick="window.location.href ='index.html'">首页</button>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+<main class="container">
+
+  <h1 class="my-5 text-center">信息分享</h1>
+
+  <div style="text-align: center">
+    <form id="postForm">
+      <h2>发布信息分享</h2>
+
+      <label for="title">标题:</label>
+      <input type="text" id="title" name="title" required>
+
+      <input type="text" value="123456" name="sharerId" hidden="hidden">
+
+      <label for="content">内容:</label>
+      <input type="text" id="content" name="content"  style="margin-top: 10px" required><br>
+
+      <label for="image">图片:</label>
+      <input type="file" id="image" name="file" accept="image/*" required><br><br>
+
+      <input type="submit" value="发布信息分享" style="width: 150px;height: 30px">
+    </form>
+  </div>
+
+  <div class="tab-content">
+    <div class="tab-pane active" id="all" role="tabpanel" aria-labelledby="all-tab">
+      <div class="card-columns" id="list">
+
+      </div>
+    </div>
+
+
+
+  </div>
+</main>
+</body>
+</html>

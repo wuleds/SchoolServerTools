@@ -43,10 +43,9 @@ public class DataShareService
 
     /**获取所有信息
      * 测试通过**/
-    public String getAllDataShare()
+    public ArrayList<DataShare> getAllDataShare()
     {
-        String json = JSON.toJSONString(dataShareDao.getAllDataShare());
-        return json;
+        return dataShareDao.getAllDataShare();
     }
 
     /**分页查询

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>signin</title>
+
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+            background: url("/static/image/1.jpg") no-repeat 0px 0px;
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            -moz-background-size: 100% 100%;
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+        }
+
+
+
+
+        p{
+            margin-top: 10px;
+            margin-left: 20px;
+            color: azure;
+        }
+
+
+        input {
+            margin-left: 15px;
+            border-radius: 5px;
+            border-style: hidden;
+            height: 30px;
+            width: 140px;
+            background-color: rgba(216, 191, 216, 0.5);
+            outline: none;
+            color: #f0edf3;
+            padding-left: 10px;
+        }
+
+
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            margin-top: 20px;
+            color: #f0edf3;
+        }
+        b {
+            margin-left: 50px;
+            color: #FFEB3B;
+            font-size: 10px;
+            font-weight: initial;
+        }
+    </style>
+ </head>
+<body>
+
+
+
+<p style="text-align: center">
+
+    账户：<input type="text" name="userId" id="uid" ><br><br>
+    密码：<input type="password" name="userPassword" id="upwd"><br>
+    <br>
+    <br>
+
+
+
+    <input type="submit" id="login" value="登录" onclick="send()"><br><br>
+<input type="submit" id="register" value="注册" onclick="window.location.href='register.html'">
+</p>
+
+<script src="/js/jquery.js"></script>
+<script>
+
+    function check()
+    {
+        if(!uid) {
+            return alert('请填写账号');
+
+        }
+        if(!upwd){
+            return alert('请填写密码')
+        }
+
+
+        else{
+            send();
+        }
+    }
+
+    function send(){
+        const URL = "http://wule.space:80/signin/user";
+        const uid = document.getElementById("uid").value;
+        const upwd = document.getElementById("upwd").value;
+
+        const user = {
+            userId:uid,
+            userPassword:upwd,
+        }
+
+        $.ajax({
+            url:URL,
+            type:"POST",
+            data:user,
+            dataType:"text",
+            success:function (result) {
+                if(result === "SigninSuccess")
+                {
+                    window.location.href='index.html';
+                }else {
+                    alert(result);
+                }
+            },
+            error:function (error) {
+                alert(error);
+            }
+
+        });
+    }
+</script>
+
+</body>
+</html>

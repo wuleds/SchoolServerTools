@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.ArrayList;
+
 @CrossOrigin
 @Controller
 @RequestMapping("/question")
@@ -66,7 +68,7 @@ public class QuestionController
     /**获取所有问题**/
     @RequestMapping("/getAll")
     @ResponseBody
-    public PostNum getAll()
+    public ArrayList<Question> getAll()
     {
         return questionService.getAllQuestions();
     }

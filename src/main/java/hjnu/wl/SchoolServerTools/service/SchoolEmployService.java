@@ -101,12 +101,8 @@ public class SchoolEmployService
     }
 
     /**获取所有的学校招聘信息*/
-    public PostNum getAllSchoolEmploy()
+    public ArrayList<SchoolEmploy> getAllSchoolEmploy()
     {
-        ArrayList<SchoolEmploy> list = schoolEmployDao.getAllSchoolEmploy();
-        String json = JSON.toJSONString(list);
-        PostNum postNum = new PostNum(list.size(), json);
-
-        return postNum;
+        return schoolEmployDao.getAllSchoolEmploy();
     }
 }

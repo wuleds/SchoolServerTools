@@ -68,12 +68,9 @@ public class QuestionService
      * 查询所有问题
      * 测试通过
      */
-    public PostNum getAllQuestions()
+    public ArrayList<Question> getAllQuestions()
     {
-        ArrayList<Question> list = questionDao.getAllQuestions();
-        String json = JSON.toJSONString(list);
-        PostNum postNum = new PostNum(list.size(),json);
-        return postNum;
+        return questionDao.getAllQuestions();
     }
 
     /**分页查询**/
