@@ -14,7 +14,7 @@ public class StartController
     public ModelAndView start()
     {
         ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("Login");
+        modelAndView.setViewName("login");
         return modelAndView;
     }
 }
